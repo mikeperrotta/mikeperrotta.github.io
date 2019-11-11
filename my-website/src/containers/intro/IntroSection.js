@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import AppHeader from '../app/AppHeader';
 import PageSection from '../../components/layout/PageSection';
 import StarryNight from '../../assets/images/starry-night.jpg';
 
@@ -14,7 +15,7 @@ const Content = styled.div`
   text-align: center;
 
   @media only screen and (min-width: 768px) {
-    max-width: 60%;
+    max-width: 75%;
   }
 
   @media only screen and (min-width: 1020px) {
@@ -22,25 +23,25 @@ const Content = styled.div`
   }
 `;
 
-const Title = styled.div`
-  color: #ffffff;
-  font-size: 25px;
-  font-weight: semi-bold;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  margin-top: 0;
-  text-align: left;
-
-  @media only screen and (min-width: 768px) {
-    font-size: 40px;
-    text-align: left;
-  }
-`;
+// const Title = styled.div`
+//   color: #ffffff;
+//   font-size: 25px;
+//   font-weight: 600;
+//   line-height: 1.2;
+//   margin-bottom: 20px;
+//   margin-top: 0;
+//   text-align: left;
+//
+//   @media only screen and (min-width: 768px) {
+//     font-size: 40px;
+//     text-align: left;
+//   }
+// `;
 
 const IntroSection = () => (
   <PageSection bgImage={StarryNight}>
+    <AppHeader />
     <Content>
-      <Title>Mike Perrotta</Title>
     </Content>
   </PageSection>
 );

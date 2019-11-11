@@ -1,12 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-/*
- * styled components
- */
-
-// TODO: bgSize is a quick add, we can probably handle this much better
-const bgImageMixin = ({ bgColor, bgImage, bgSize }) => {
+const applyBgStyles = ({ bgColor, bgImage, bgSize }) => {
   if (bgImage) {
     return css`
       background-image: url(${bgImage});
@@ -45,7 +40,7 @@ export const PageSectionInnerWrapper = styled.div`
 
   @media only screen and (min-width: 768px) {
     align-items: stretch;
-    width: 1020px;
+    width: 80%;
   }
 `;
 
@@ -53,24 +48,17 @@ const PageSectionBackgroundWrapper = styled.div`
   height: 100%;
   position: absolute;
   width: 100%;
-  ${(props) => bgImageMixin(props)}
+  ${(props) => applyBgStyles(props)}
 `;
-
-/*
- * components
- */
 
 const PageSection = ({
   bgColor,
-  bgComponent,
   bgImage,
   bgSize,
   children
 }) => (
   <PageSectionOuterWrapper>
-    <PageSectionBackgroundWrapper bgColor={bgColor} bgImage={bgImage} bgSize={bgSize}>
-      { bgComponent }
-    </PageSectionBackgroundWrapper>
+    <PageSectionBackgroundWrapper bgColor={bgColor} bgImage={bgImage} bgSize={bgSize} />
     <PageSectionInnerWrapper>
       { children }
     </PageSectionInnerWrapper>
@@ -79,7 +67,6 @@ const PageSection = ({
 
 PageSection.defaultProps = {
   bgColor: undefined,
-  bgComponent: undefined,
   bgImage: undefined,
   bgSize: undefined
 };
