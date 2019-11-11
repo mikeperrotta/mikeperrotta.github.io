@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const routerHistory = initializeRouterHistory();
-const APP_ROOT_NODE = document.getElementById('root');
+const APP_ROOT_NODE = document.getElementById('app');
 
 if (APP_ROOT_NODE) {
   ReactDOM.render(

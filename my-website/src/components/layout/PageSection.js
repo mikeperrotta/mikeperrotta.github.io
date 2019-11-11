@@ -40,7 +40,7 @@ export const PageSectionInnerWrapper = styled.div`
 
   @media only screen and (min-width: 768px) {
     align-items: stretch;
-    width: 80%;
+    width: 85%;
   }
 `;
 
