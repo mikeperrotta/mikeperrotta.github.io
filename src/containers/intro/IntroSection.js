@@ -3,13 +3,15 @@ import styled from 'styled-components';
 
 import AppHeader from '../app/AppHeader';
 import PageSection from '../../components/layout/PageSection';
-import StarryNight from '../../assets/images/starry-night.jpg';
 import RockyMorning from '../../assets/images/rocky-morning.jpg';
+import StarryNight from '../../assets/images/starry-night.jpg';
+
+import { NEUTRALS } from '../../core/styles/Colors';
 
 /* styled components */
 const Content = styled.div`
-  color: #fff;
   align-items: center;
+  color: ${NEUTRALS.WHITE};
   display: block;
   flex-direction: column;
   margin: 50px auto 100px auto;
