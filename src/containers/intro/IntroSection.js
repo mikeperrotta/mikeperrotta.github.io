@@ -6,8 +6,9 @@ import PageSection from '../../components/layout/PageSection';
 import StarryNight from '../../assets/images/starry-night.jpg';
 import RockyMorning from '../../assets/images/rocky-morning.jpg';
 
+/* styled components */
 const Content = styled.div`
-  color: #ffffff;
+  color: #fff;
   align-items: center;
   display: block;
   flex-direction: column;
@@ -24,6 +25,7 @@ const Content = styled.div`
   }
 `;
 
+/* react component */
 const IntroSection = () => (
   <PageSection bgImage={RockyMorning}>
     <AppHeader />
