@@ -24,21 +24,6 @@ const Content = styled.div`
   }
 `;
 
-// const Title = styled.div`
-//   color: #ffffff;
-//   font-size: 25px;
-//   font-weight: 600;
-//   line-height: 1.2;
-//   margin-bottom: 20px;
-//   margin-top: 0;
-//   text-align: left;
-//
-//   @media only screen and (min-width: 768px) {
-//     font-size: 40px;
-//     text-align: left;
-//   }
-// `;
-
 const IntroSection = () => (
   <PageSection bgImage={RockyMorning}>
     <AppHeader />
