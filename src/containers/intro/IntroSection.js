@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import AppHeader from '../app/AppHeader';
 import PageSection from '../../components/layout/PageSection';
 import StarryNight from '../../assets/images/starry-night.jpg';
+import RockyMorning from '../../assets/images/rocky-morning.jpg';
 
 const Content = styled.div`
   color: #ffffff;
@@ -39,7 +40,7 @@ const Content = styled.div`
 // `;
 
 const IntroSection = () => (
-  <PageSection bgImage={StarryNight}>
+  <PageSection bgImage={RockyMorning}>
     <AppHeader />
     <Content>
     </Content>
