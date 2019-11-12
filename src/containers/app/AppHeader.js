@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { NEUTRALS } from '../../core/styles/Colors';
 import * as Routes from '../../core/router/Routes';
@@ -18,7 +18,7 @@ const Header = styled.div`
   }
 `;
 
-const LinkToHome = styled(Link)`
+const LinkToHome = styled(NavLink)`
   align-items: center;
   color: ${NEUTRALS.WHITE};
   display: flex;
