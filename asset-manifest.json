@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.js": "/static/js/main.e877cb6d.chunk.js",
-    "main.js.map": "/static/js/main.e877cb6d.chunk.js.map",
+    "main.js": "/static/js/main.713f33bc.chunk.js",
+    "main.js.map": "/static/js/main.713f33bc.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.6f8d2787.js",
     "runtime-main.js.map": "/static/js/runtime-main.6f8d2787.js.map",
     "static/js/2.aa0e779a.chunk.js": "/static/js/2.aa0e779a.chunk.js",
     "static/js/2.aa0e779a.chunk.js.map": "/static/js/2.aa0e779a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ea058ab54ece324e9860ac599614e6fb.js": "/precache-manifest.ea058ab54ece324e9860ac599614e6fb.js",
+    "precache-manifest.7f5f780752606d33e2c5bbdb4528bd9e.js": "/precache-manifest.7f5f780752606d33e2c5bbdb4528bd9e.js",
     "service-worker.js": "/service-worker.js",
+    "static/media/rocky-morning.jpg": "/static/media/rocky-morning.b64114c0.jpg",
     "static/media/starry-night.jpg": "/static/media/starry-night.5e9ee8b2.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.6f8d2787.js",
     "static/js/2.aa0e779a.chunk.js",
-    "static/js/main.e877cb6d.chunk.js"
+    "static/js/main.713f33bc.chunk.js"
   ]
 }
