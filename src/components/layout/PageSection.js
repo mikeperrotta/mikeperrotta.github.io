@@ -1,5 +1,7 @@
+// @flow
 import React from 'react';
 import styled, { css } from 'styled-components';
+import type { Node } from 'react';
 
 const applyBgStyles = ({ bgColor, bgImage, bgSize }) => {
   if (bgImage) {
@@ -51,12 +53,19 @@ const PageSectionBackgroundWrapper = styled.div`
   ${(props) => applyBgStyles(props)}
 `;
 
+type Props = {
+  bgColor ? :string;
+  bgImage ? :string;
+  bgSize ? :string;
+  children :Node;
+};
+
 const PageSection = ({
   bgColor,
   bgImage,
   bgSize,
   children
-}) => (
+} :Props) => (
   <PageSectionOuterWrapper>
     <PageSectionBackgroundWrapper bgColor={bgColor} bgImage={bgImage} bgSize={bgSize} />
     <PageSectionInnerWrapper>
