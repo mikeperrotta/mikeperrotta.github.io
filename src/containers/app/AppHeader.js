@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 
 import { NEUTRALS } from '../../core/styles/Colors';
 import * as Routes from '../../core/router/Routes';
@@ -20,7 +21,7 @@ const Header = styled.div`
 
 const LinkToHome = styled(NavLink)`
   align-items: center;
-  color: ${NEUTRALS.WHITE};
+  color: ${NEUTRALS.GRAY01};
   display: flex;
   font-size: 24px;
   font-weight: semi-bold;
@@ -45,7 +46,18 @@ const Menu = styled.div`
 `;
 
 const MenuInternalLink = styled(NavLink)`
-  color: ${NEUTRALS.WHITE};
+  color: ${NEUTRALS.GRAY01};
+  margin-right: 30px;
+  text-decoration: none;
+
+  &:hover {
+    color: ${NEUTRALS.GRAY01};
+    cursor: pointer;
+  }
+`;
+
+const MenuInternalHashLink = styled(NavHashLink)`
+  color: ${NEUTRALS.GRAY01};
   margin-right: 30px;
   text-decoration: none;
 
@@ -61,11 +73,12 @@ const AppHeader = () => (
       MIKE PERROTTA
     </LinkToHome>
     <Menu>
-      <MenuInternalLink
+      <MenuInternalHashLink
           activeStyle={{ fontWeight: '600' }}
-          to={Routes.PORTFOLIO}>
+          to={Routes.PORTFOLIO}
+          smooth>
         portfolio
-      </MenuInternalLink>
+      </MenuInternalHashLink>
       <MenuInternalLink
           activeStyle={{ fontWeight: '600' }}
           to={Routes.ABOUT}>
