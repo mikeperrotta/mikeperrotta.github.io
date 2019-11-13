@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 
@@ -45,26 +45,25 @@ const Menu = styled.div`
   margin-left: 60px;
 `;
 
-const MenuInternalLink = styled(NavLink)`
-  color: ${NEUTRALS.GRAY01};
-  margin-right: 30px;
-  text-decoration: none;
+const getInternalLinkStyles = () => (
+  css`
+   color: ${NEUTRALS.GRAY01};
+   margin-right: 30px;
+   text-decoration: none;
 
-  &:hover {
-    color: ${NEUTRALS.GRAY01};
-    cursor: pointer;
-  }
+   &:hover {
+     color: ${NEUTRALS.GRAY01};
+     cursor: pointer;
+   }
+  `
+);
+
+const MenuInternalLink = styled(NavLink)`
+  ${getInternalLinkStyles}
 `;
 
 const MenuInternalHashLink = styled(NavHashLink)`
-  color: ${NEUTRALS.GRAY01};
-  margin-right: 30px;
-  text-decoration: none;
-
-  &:hover {
-    color: ${NEUTRALS.GRAY01};
-    cursor: pointer;
-  }
+  ${getInternalLinkStyles}
 `;
 
 const AppHeader = () => (
