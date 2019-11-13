@@ -5,10 +5,10 @@ import { NEUTRALS } from '../../core/styles/Colors';
 
 /* styled components */
 const SquareWrapper = styled.div`
-  width: 200px;
-  height: 200px;
   background-color: ${NEUTRALS.WHITE};
+  height: 200px;
   margin: 10px;
+  width: 200px;
 `;
 
 /* react component */
