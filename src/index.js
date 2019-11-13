@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-
-import initializeRouterHistory from './core/router/RouterHistory';
 
 import AppContainer from './containers/app/AppContainer';
 import * as serviceWorker from './serviceWorker';
@@ -34,12 +32,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const routerHistory = initializeRouterHistory();
 const APP_ROOT_NODE = document.getElementById('app');
 
 if (APP_ROOT_NODE) {
   ReactDOM.render(
-    <Router history={routerHistory}>
+    <Router>
       <AppContainer />
       <GlobalStyle />
     </Router>,
