@@ -16,15 +16,23 @@ const Content = styled.div`
   text-align: center;
 `;
 
+const ComingSoonText = styled.div`
+  color: ${NEUTRALS.LIGHT_GRAY};
+  font-family: Muli;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 200;
+  padding: 250px 50px;
+  text-align: center;
+`;
+
 /* react component */
 const PortfolioSection = () => (
   <PageSection bgColor={NEUTRALS.DARK_GRAY}>
     <Content id="portfolio">
-      {
-        [1, 2, 3, 4, 5, 6].map((num) => (
-          <ProjectSquare key={num} />
-        ))
-      }
+      <ComingSoonText>
+        Coming Soon
+      </ComingSoonText>
     </Content>
   </PageSection>
 );
