@@ -38,6 +38,7 @@ export const PageSectionOuterWrapper = styled.section`
   width: 100%;
   position: relative;
   height: ${(props) => (props.fullScreen ? '100%' : 'auto')}
+  overflow: hidden;
 `;
 
 // "padding" adds space between the window edge and the content when the window size is really small
