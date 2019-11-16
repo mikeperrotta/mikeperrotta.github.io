@@ -37,13 +37,11 @@ export const PageSectionInnerWrapper = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 0 30px;
   position: relative;
   width: 100%;
 
   @media only screen and (min-width: 768px) {
     align-items: stretch;
-    width: 85%;
   }
 `;
 
