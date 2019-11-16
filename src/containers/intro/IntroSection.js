@@ -30,7 +30,7 @@ const Content = styled.div`
 
 /* react component */
 const IntroSection = () => (
-  <PageSection bgImage={RockyMorning}>
+  <PageSection bgImage={RockyMorning} fullScreen>
     <AppHeader />
     <Content />
   </PageSection>

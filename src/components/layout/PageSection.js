@@ -23,12 +23,22 @@ const applyBgStyles = ({ bgColor, bgImage, bgSize }) => {
   `;
 };
 
+const applyFullScreen = ({ fullScreen }) => {
+  if (fullScreen) {
+    return css`
+      height: 100%;
+    `
+  }
+  return css``;
+};
+
 // "min-width" because this container needs to stretch to 100% of the width of the window
 export const PageSectionOuterWrapper = styled.section`
   display: flex;
   justify-content: center;
-  min-width: 100%;
+  width: 100%;
   position: relative;
+  ${(props) => applyFullScreen(props)}
 `;
 
 // "padding" adds space between the window edge and the content when the window size is really small
@@ -57,6 +67,7 @@ type Props = {
   bgColor ? :string;
   bgImage ? :string;
   bgSize ? :string;
+  fullScreen ? :boolean;
   children :Node;
 };
 
@@ -64,9 +75,10 @@ const PageSection = ({
   bgColor,
   bgImage,
   bgSize,
+  fullScreen,
   children
 } :Props) => (
-  <PageSectionOuterWrapper>
+  <PageSectionOuterWrapper fullScreen={fullScreen}>
     <PageSectionBackgroundWrapper bgColor={bgColor} bgImage={bgImage} bgSize={bgSize} />
     <PageSectionInnerWrapper>
       { children }
@@ -77,7 +89,8 @@ const PageSection = ({
 PageSection.defaultProps = {
   bgColor: undefined,
   bgImage: undefined,
-  bgSize: undefined
+  bgSize: undefined,
+  fullScreen: false,
 };
 
 export default PageSection;
