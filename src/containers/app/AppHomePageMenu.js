@@ -14,7 +14,7 @@ const Menu = styled.div`
   bottom: 0;
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 12px;
   position: absolute;
   width: 100%;
 `;
