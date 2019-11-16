@@ -48,7 +48,7 @@ const SubtitleText = styled.div`
 
 /* react component */
 const IntroSection = () => (
-  <PageSection bgImage={RockyMorning} fullScreen>
+  <PageSection bgImage={RockyMorning} fullScreen blur={6} flipHorizontal>
     <Content>
       <TitleText>
         MIKE PERROTTA

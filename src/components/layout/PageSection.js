@@ -3,13 +3,21 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import type { Node } from 'react';
 
-const applyBgStyles = ({ bgColor, bgImage, bgSize }) => {
+const applyBgStyles = ({
+  bgColor, bgImage, bgSize, blur, flipHorizontal
+}) => {
   if (bgImage) {
+    let transform = flipHorizontal ? 'scaleX(-1)' : '';
+    if (blur) {
+      transform += ' scale(1.1)';
+    }
     return css`
       background-image: url(${bgImage});
       background-position: center;
       background-repeat: no-repeat;
       background-size: ${bgSize || 'cover'};
+      filter: blur(${blur}px);
+      transform: ${transform};
     `;
   }
   if (bgColor) {
@@ -57,6 +65,8 @@ type Props = {
   bgImage ? :string;
   bgSize ? :string;
   fullScreen ? :boolean;
+  blur ? :int;
+  flipHorizontal ? :boolean;
   children :Node;
 };
 
@@ -65,10 +75,17 @@ const PageSection = ({
   bgImage,
   bgSize,
   fullScreen,
+  blur,
+  flipHorizontal,
   children
 } :Props) => (
   <PageSectionOuterWrapper fullScreen={fullScreen}>
-    <PageSectionBackgroundWrapper bgColor={bgColor} bgImage={bgImage} bgSize={bgSize} />
+    <PageSectionBackgroundWrapper
+        bgColor={bgColor}
+        bgImage={bgImage}
+        bgSize={bgSize}
+        blur={blur}
+        flipHorizontal={flipHorizontal} />
     <PageSectionInnerWrapper>
       { children }
     </PageSectionInnerWrapper>
@@ -80,6 +97,8 @@ PageSection.defaultProps = {
   bgImage: undefined,
   bgSize: undefined,
   fullScreen: false,
+  blur: 0,
+  flipHorizontal: false,
 };
 
 export default PageSection;
