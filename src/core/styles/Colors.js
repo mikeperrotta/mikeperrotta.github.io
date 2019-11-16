@@ -1,5 +1,6 @@
 export const NEUTRALS = {
   BLACK: '#000',
-  GRAY01: '#4d4d4d',
+  LIGHT_GRAY: '#F1EFEB',
+  DARK_GRAY: '#282D2B',
   WHITE: '#fff',
 };
