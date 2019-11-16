@@ -34,11 +34,11 @@ const applyBgStyles = ({
 // "min-width" because this container needs to stretch to 100% of the width of the window
 export const PageSectionOuterWrapper = styled.section`
   display: flex;
-  justify-content: center;
-  width: 100%;
-  position: relative;
   height: ${(props) => (props.fullScreen ? '100%' : 'auto')}
+  justify-content: center;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 `;
 
 // "padding" adds space between the window edge and the content when the window size is really small
@@ -65,10 +65,10 @@ type Props = {
   bgColor ? :string;
   bgImage ? :string;
   bgSize ? :string;
-  fullScreen ? :boolean;
   blur ? :int;
-  flipHorizontal ? :boolean;
   children :Node;
+  flipHorizontal ? :boolean;
+  fullScreen ? :boolean;
 };
 
 const PageSection = ({
@@ -97,9 +97,9 @@ PageSection.defaultProps = {
   bgColor: undefined,
   bgImage: undefined,
   bgSize: undefined,
-  fullScreen: false,
   blur: 0,
   flipHorizontal: false,
+  fullScreen: false,
 };
 
 export default PageSection;

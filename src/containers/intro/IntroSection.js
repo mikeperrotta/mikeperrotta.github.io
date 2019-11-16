@@ -22,13 +22,13 @@ const Content = styled.div`
 `;
 
 const TitleText = styled.div`
+  color: ${NEUTRALS.DARK_GRAY};
   font-family: Muli;
+  font-size: 72px;
   font-style: normal;
   font-weight: 200;
-  font-size: 72px;
-  text-align: center;
-  color: ${NEUTRALS.DARK_GRAY};
   padding: 0px 50px;
+  text-align: center;
 `;
 
 const SubtitleLine = styled.div`
@@ -37,13 +37,13 @@ const SubtitleLine = styled.div`
 `;
 
 const SubtitleText = styled.div`
+  color: ${NEUTRALS.DARK_GRAY};
   font-family: Muli;
+  font-size: 48px;
   font-style: normal;
   font-weight: 200;
-  font-size: 48px;
   line-height: 60px;
   text-align: center;
-  color: ${NEUTRALS.DARK_GRAY};
 `;
 
 /* react component */

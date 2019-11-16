@@ -26,8 +26,8 @@ const getLinkStyles = () => (
     font-style: normal;
     font-weight: 200;
     line-height: 30px;
-    text-decoration: none;
     margin: 0px 80px;
+    text-decoration: none;
 
    &:hover {
      color: ${NEUTRALS.LIGHT_GRAY};
