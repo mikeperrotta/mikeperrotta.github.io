@@ -5,7 +5,7 @@ import { NEUTRALS } from '../../core/styles/Colors';
 
 /* styled components */
 const SquareWrapper = styled.div`
-  background-color: ${NEUTRALS.WHITE};
+  background-color: ${NEUTRALS.LIGHT_GRAY};
   height: 200px;
   margin: 10px;
   width: 200px;

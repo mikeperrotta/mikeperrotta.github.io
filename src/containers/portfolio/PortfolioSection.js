@@ -9,7 +9,6 @@ import { NEUTRALS } from '../../core/styles/Colors';
 /* styled components */
 const Content = styled.div`
   align-items: center;
-  color: ${NEUTRALS.GRAY01};
   display: block;
   flex-direction: column;
   margin: 50px auto 100px auto;
@@ -19,7 +18,7 @@ const Content = styled.div`
 
 /* react component */
 const PortfolioSection = () => (
-  <PageSection bgColor={NEUTRALS.GRAY01}>
+  <PageSection bgColor={NEUTRALS.DARK_GRAY}>
     <Content id="portfolio">
       {
         [1, 2, 3, 4, 5, 6].map((num) => (
