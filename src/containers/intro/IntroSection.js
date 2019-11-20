@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import AppHomePageMenu from '../app/AppHomePageMenu'
+import AppHomePageMenu from '../app/AppHomePageMenu';
 import PageSection from '../../components/layout/PageSection';
 import RockyMorning from '../../assets/images/rocky-morning.jpg';
 // import RockyMorning from '../../assets/images/Header Photo.png';
