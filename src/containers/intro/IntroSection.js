@@ -52,7 +52,7 @@ const IntroSection = () => (
       bgImage={RockyMorning}
       blur={6}
       flipHorizontal
-      fullScreen>
+      height="100%">
     <Content>
       <TitleText>
         MIKE PERROTTA
