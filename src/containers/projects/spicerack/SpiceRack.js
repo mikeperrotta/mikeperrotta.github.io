@@ -44,13 +44,12 @@ const SpiceRack = () => (
     </PageSection>
     {
       SPICERACK.map((section) => (
-        <PageSection bgColor={section.bgColor} height="680px">
+        <PageSection bgColor={section.bgColor} height="680px" key={section.name}>
           <ProjectSection
               header={section.header}
               description={section.description}
               image={section.image}
-              imageOnLeft={section.imageOnLeft}
-              key={section.name} />
+              imageOnLeft={section.imageOnLeft} />
         </PageSection>
       ))
     }
