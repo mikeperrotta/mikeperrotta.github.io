@@ -58,7 +58,7 @@ const IntroSection = () => (
       </TitleText>
       <SubtitleLine />
       <SubtitleText>
-        Scientist, Coder, Writer
+        Scientist, Writer, Coder
       </SubtitleText>
     </Content>
     <AppHomePageMenu />
