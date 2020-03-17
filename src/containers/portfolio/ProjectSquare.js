@@ -99,6 +99,18 @@ class ProjectSquare extends Component<ProjectProps, State> {
     const { project } = this.props;
     const { image, link, external } = project;
     const { projectText, isMouseOver } = this.state;
+    const Square = () => (
+      <SquareWrapper
+          onMouseEnter={this.onMouseOver}
+          onMouseLeave={this.onMouseOut}>
+        <BackgroundImage
+            image={image}
+            isMouseOver={isMouseOver} />
+        <ProjectText>
+          { projectText }
+        </ProjectText>
+      </SquareWrapper>
+    );
     if (external) {
       return (
         <a
@@ -106,16 +118,7 @@ class ProjectSquare extends Component<ProjectProps, State> {
             rel="noreferrer noopener"
             target="_blank"
             style={{ textDecoration: 'none' }}>
-          <SquareWrapper
-              onMouseEnter={this.onMouseOver}
-              onMouseLeave={this.onMouseOut}>
-            <BackgroundImage
-                image={image}
-                isMouseOver={isMouseOver} />
-            <ProjectText>
-              { projectText }
-            </ProjectText>
-          </SquareWrapper>
+          <Square />
         </a>
       );
     }
@@ -123,16 +126,7 @@ class ProjectSquare extends Component<ProjectProps, State> {
       <NavLink
           to={link}
           style={{ textDecoration: 'none' }}>
-        <SquareWrapper
-            onMouseEnter={this.onMouseOver}
-            onMouseLeave={this.onMouseOut}>
-          <BackgroundImage
-              image={image}
-              isMouseOver={isMouseOver} />
-          <ProjectText>
-            { projectText }
-          </ProjectText>
-        </SquareWrapper>
+        <Square />
       </NavLink>
     );
   }
