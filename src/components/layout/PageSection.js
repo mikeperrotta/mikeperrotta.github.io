@@ -3,13 +3,21 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import type { Node } from 'react';
 
-const applyBgStyles = ({ bgColor, bgImage, bgSize }) => {
+const applyBgStyles = ({
+  bgColor, bgImage, bgSize, bgImagePosition, blur, flipHorizontal
+}) => {
   if (bgImage) {
+    let transform = flipHorizontal ? 'scaleX(-1)' : '';
+    if (blur) {
+      transform += ' scale(1.1)';
+    }
     return css`
       background-image: url(${bgImage});
-      background-position: center;
+      background-position: ${bgImagePosition || 'center'};
       background-repeat: no-repeat;
       background-size: ${bgSize || 'cover'};
+      filter: blur(${blur}px);
+      transform: ${transform};
     `;
   }
   if (bgColor) {
@@ -26,9 +34,11 @@ const applyBgStyles = ({ bgColor, bgImage, bgSize }) => {
 // "min-width" because this container needs to stretch to 100% of the width of the window
 export const PageSectionOuterWrapper = styled.section`
   display: flex;
+  height: ${(props) => (props.height)}
   justify-content: center;
-  min-width: 100%;
+  overflow: hidden;
   position: relative;
+  width: 100%;
 `;
 
 // "padding" adds space between the window edge and the content when the window size is really small
@@ -36,13 +46,11 @@ export const PageSectionInnerWrapper = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 0 30px;
   position: relative;
   width: 100%;
 
   @media only screen and (min-width: 768px) {
     align-items: stretch;
-    width: 85%;
   }
 `;
 
@@ -57,17 +65,31 @@ type Props = {
   bgColor ? :string;
   bgImage ? :string;
   bgSize ? :string;
+  bgImagePosition ? :string;
+  blur ? :int;
   children :Node;
+  flipHorizontal ? :boolean;
+  height ? :string;
 };
 
 const PageSection = ({
   bgColor,
   bgImage,
   bgSize,
+  bgImagePosition,
+  height,
+  blur,
+  flipHorizontal,
   children
 } :Props) => (
-  <PageSectionOuterWrapper>
-    <PageSectionBackgroundWrapper bgColor={bgColor} bgImage={bgImage} bgSize={bgSize} />
+  <PageSectionOuterWrapper height={height}>
+    <PageSectionBackgroundWrapper
+        bgColor={bgColor}
+        bgImage={bgImage}
+        bgSize={bgSize}
+        bgImagePosition={bgImagePosition}
+        blur={blur}
+        flipHorizontal={flipHorizontal} />
     <PageSectionInnerWrapper>
       { children }
     </PageSectionInnerWrapper>
@@ -77,7 +99,11 @@ const PageSection = ({
 PageSection.defaultProps = {
   bgColor: undefined,
   bgImage: undefined,
-  bgSize: undefined
+  bgSize: undefined,
+  bgImagePosition: undefined,
+  blur: 0,
+  flipHorizontal: false,
+  height: 'auto',
 };
 
 export default PageSection;
