@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { NEUTRALS } from '../../core/styles/Colors';
 
 /* styled components */
-const SquareWrapper = styled(NavLink)`
+const SquareWrapper = styled.div`
   align-items: center;
   background-color: transparent;
   border-radius: .75%;
@@ -61,6 +61,7 @@ type Project = {
   image :string;
   text :string;
   link :string;
+  external :boolean;
 };
 
 type ProjectProps = {
@@ -96,20 +97,43 @@ class ProjectSquare extends Component<ProjectProps, State> {
 
   render() {
     const { project } = this.props;
-    const { image, link } = project;
+    const { image, link, external } = project;
     const { projectText, isMouseOver } = this.state;
+    if (external) {
+      return (
+        <a
+            href={link}
+            rel="noreferrer noopener"
+            target="_blank"
+            style={{ textDecoration: 'none' }}>
+          <SquareWrapper
+              onMouseEnter={this.onMouseOver}
+              onMouseLeave={this.onMouseOut}>
+            <BackgroundImage
+                image={image}
+                isMouseOver={isMouseOver} />
+            <ProjectText>
+              { projectText }
+            </ProjectText>
+          </SquareWrapper>
+        </a>
+      );
+    }
     return (
-      <SquareWrapper
+      <NavLink
           to={link}
-          onMouseEnter={this.onMouseOver}
-          onMouseLeave={this.onMouseOut}>
-        <BackgroundImage
-            image={image}
-            isMouseOver={isMouseOver} />
-        <ProjectText>
-          { projectText }
-        </ProjectText>
-      </SquareWrapper>
+          style={{ textDecoration: 'none' }}>
+        <SquareWrapper
+            onMouseEnter={this.onMouseOver}
+            onMouseLeave={this.onMouseOut}>
+          <BackgroundImage
+              image={image}
+              isMouseOver={isMouseOver} />
+          <ProjectText>
+            { projectText }
+          </ProjectText>
+        </SquareWrapper>
+      </NavLink>
     );
   }
 }
