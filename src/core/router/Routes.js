@@ -1,5 +1,5 @@
-export const ROOT = '/';
-export const PORTFOLIO = '/#projects';
+export const ROOT = '/home';
+export const PORTFOLIO = '/home#projects';
 export const ABOUT = '/about';
 
 const PROJECTS = '/projects';

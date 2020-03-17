@@ -8,7 +8,8 @@ import { NEUTRALS } from '../../core/styles/Colors';
 /* styled components */
 const SquareWrapper = styled(NavLink)`
   align-items: center;
-  background-color: ${NEUTRALS.LIGHT_GRAY};
+  background-color: transparent;
+  border-radius: .75%;
   display: flex;
   height: 340px;
   justify-content: center;
@@ -32,15 +33,15 @@ const applyBgStyles = ({ isMouseOver }) => {
 };
 
 const BackgroundImage = styled.div`
-  background-color: ${NEUTRALS.LIGHT_GRAY};
+  background-color: transparent;
   background-image: url(${(props) => props.image});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   position: absolute;
-  width: 100%;
   transition: filter .2s, transform .2s;
+  width: 100%;
 
   ${(props) => applyBgStyles(props)}
 `;

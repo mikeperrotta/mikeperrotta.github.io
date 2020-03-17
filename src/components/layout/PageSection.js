@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import type { Node } from 'react';
 
 const applyBgStyles = ({
-  bgColor, bgImage, bgSize, blur, flipHorizontal
+  bgColor, bgImage, bgSize, bgImagePosition, blur, flipHorizontal
 }) => {
   if (bgImage) {
     let transform = flipHorizontal ? 'scaleX(-1)' : '';
@@ -13,7 +13,7 @@ const applyBgStyles = ({
     }
     return css`
       background-image: url(${bgImage});
-      background-position: center;
+      background-position: ${bgImagePosition || 'center'};
       background-repeat: no-repeat;
       background-size: ${bgSize || 'cover'};
       filter: blur(${blur}px);
@@ -65,6 +65,7 @@ type Props = {
   bgColor ? :string;
   bgImage ? :string;
   bgSize ? :string;
+  bgImagePosition ? :string;
   blur ? :int;
   children :Node;
   flipHorizontal ? :boolean;
@@ -75,6 +76,7 @@ const PageSection = ({
   bgColor,
   bgImage,
   bgSize,
+  bgImagePosition,
   height,
   blur,
   flipHorizontal,
@@ -85,6 +87,7 @@ const PageSection = ({
         bgColor={bgColor}
         bgImage={bgImage}
         bgSize={bgSize}
+        bgImagePosition={bgImagePosition}
         blur={blur}
         flipHorizontal={flipHorizontal} />
     <PageSectionInnerWrapper>
@@ -97,6 +100,7 @@ PageSection.defaultProps = {
   bgColor: undefined,
   bgImage: undefined,
   bgSize: undefined,
+  bgImagePosition: undefined,
   blur: 0,
   flipHorizontal: false,
   height: 'auto',

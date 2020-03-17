@@ -1,6 +1,6 @@
 // @flow
 
-import DeskImage from '../../assets/images/desk.jpeg';
+import DeskImage from '../../assets/images/desk/desk.jpeg';
 import SpiceRackImage from '../../assets/images/spice-rack.jpeg';
 import ShoeRackImage from '../../assets/images/shoe-rack.jpeg';
 
