@@ -38,7 +38,7 @@ const Menu = styled.div`
     box-shadow: none;
     `
   )}
-  `;
+`;
 
 const getLinkStyles = () => (
   css`
