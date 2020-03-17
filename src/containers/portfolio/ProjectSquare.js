@@ -24,11 +24,11 @@ const applyBgStyles = ({ isMouseOver }) => {
   if (isMouseOver) {
     return css`
       filter: brightness(30%);
-      transform: scale(1.0625) rotate(90deg);
+      transform: scale(1.0625);
     `;
   }
   return css`
-    transform: scale(1.02) rotate(90deg);
+    transform: scale(1.02);
   `;
 };
 
