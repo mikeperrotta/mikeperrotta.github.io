@@ -10,7 +10,7 @@ const AppContainer = () => (
   <Switch>
     <Route path={Routes.ABOUT_PAGE} component={AppAboutPage} />
     <Route path={Routes.SPICE_RACK} component={SpiceRack} />
-    <Route path={Routes.ROOT} component={AppHomePage} />
+    <Route component={AppHomePage} />
   </Switch>
 );
 
