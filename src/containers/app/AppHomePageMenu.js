@@ -61,7 +61,7 @@ const MenuHashLink = styled(NavHashLink)`
   ${getLinkStyles}
 `;
 
-const AppHeader = () => {
+const AppHomePageMenu = () => {
   const [isSticky, setStickiness] = useState(false);
   const [menuHeight, setMenuHeight] = useState(80);
   const ref = useRef({});
@@ -99,4 +99,4 @@ const AppHeader = () => {
   );
 };
 
-export default AppHeader;
+export default AppHomePageMenu;
