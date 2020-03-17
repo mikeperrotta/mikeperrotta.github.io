@@ -8,9 +8,9 @@ import * as Routes from '../../core/router/Routes';
 
 const AppContainer = () => (
   <Switch>
-    <Route path={Routes.ABOUT} component={AppAboutPage} />
+    <Route path={Routes.ABOUT_PAGE} component={AppAboutPage} />
     <Route path={Routes.SPICE_RACK} component={SpiceRack} />
-    <Route component={AppHomePage} />
+    <Route path={Routes.ROOT} component={AppHomePage} />
   </Switch>
 );
 

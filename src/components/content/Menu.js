@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 
 import { NEUTRALS } from '../../core/styles/Colors';
 import * as Routes from '../../core/router/Routes';
@@ -34,6 +35,18 @@ const Link = styled(NavLink)`
   }
 `;
 
+const HashLink = styled(NavHashLink)`
+  color: ${NEUTRALS.LIGHT_GRAY};
+  justify-content: center;
+  margin: 0px 20px;
+  text-decoration: none;
+
+  &:hover {
+    color: ${NEUTRALS.LIGHT_GRAY};
+    cursor: pointer;
+  }
+`;
+
 /* react component */
 const Menu = () => (
   <Content>
@@ -41,8 +54,8 @@ const Menu = () => (
       <Link to={Routes.ROOT}> Mike Perrotta </Link>
     </MenuSubArea>
     <MenuSubArea>
-      <Link to={Routes.PORTFOLIO}> projects </Link>
-      <Link to={Routes.ABOUT}> about </Link>
+      <HashLink smooth to={Routes.PORTFOLIO}> projects </HashLink>
+      <HashLink smooth to={Routes.ABOUT}> about </HashLink>
     </MenuSubArea>
   </Content>
 );

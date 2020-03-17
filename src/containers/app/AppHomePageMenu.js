@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 
 import { NEUTRALS } from '../../core/styles/Colors';
@@ -36,10 +35,6 @@ const getLinkStyles = () => (
   `
 );
 
-const MenuLink = styled(NavLink)`
-  ${getLinkStyles}
-`;
-
 const MenuHashLink = styled(NavHashLink)`
   ${getLinkStyles}
 `;
@@ -47,14 +42,15 @@ const MenuHashLink = styled(NavHashLink)`
 const AppHeader = () => (
   <Menu>
     <MenuHashLink
-        to={Routes.PORTFOLIO}
-        smooth>
+        smooth
+        to={Routes.PORTFOLIO}>
       projects
     </MenuHashLink>
-    <MenuLink
+    <MenuHashLink
+        smooth
         to={Routes.ABOUT}>
       about
-    </MenuLink>
+    </MenuHashLink>
   </Menu>
 );
 
