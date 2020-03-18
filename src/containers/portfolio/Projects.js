@@ -17,22 +17,6 @@ const PROJECTS :Object[] = [
     external: true,
   },
   {
-    name: 'Desk',
-    image: DeskImage,
-    text: 'Steel Pipe Desk',
-    link: Routes.DESK,
-  },
-  {
-    name: 'Spice Rack',
-    image: SpiceRackImage,
-    text: 'Reclaimed Wood Spice Rack',
-    link: Routes.SPICE_RACK,
-  },
-  {
-    name: 'Shoe Rack',
-    image: ShoeRackImage,
-    text: 'Copper Pipe Shoe Rack',
-    link: Routes.SHOE_RACK,
     name: 'Empire App',
     image: EmpireAppImage,
     text: 'Empire',
