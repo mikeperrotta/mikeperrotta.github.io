@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fc72cb6195d93bcf896622fc06b11f2b",
+    "revision": "f71f866a1ee172610cb14e871db610e3",
     "url": "/index.html"
   },
   {
-    "revision": "ec6585ca34c97776387f",
-    "url": "/static/js/2.dc025cba.chunk.js"
+    "revision": "6db116286ecf143ab1d3",
+    "url": "/static/js/2.e11471cc.chunk.js"
   },
   {
-    "revision": "b5d3cebc8d97ff8fe729",
-    "url": "/static/js/main.18d4f544.chunk.js"
+    "revision": "a74f0abab040ecbda3bc",
+    "url": "/static/js/main.4807f528.chunk.js"
   },
   {
     "revision": "388e3583aa4a13ce8593",
@@ -18,6 +18,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "20230c04c03b21458c2adb09f4249a83",
     "url": "/static/media/desk.20230c04.jpeg"
+  },
+  {
+    "revision": "9525765916096d0e197e0b9ee42239ca",
+    "url": "/static/media/empire-app-image.95257659.png"
   },
   {
     "revision": "056dd4a465d966a05ef3034ebfb48046",
