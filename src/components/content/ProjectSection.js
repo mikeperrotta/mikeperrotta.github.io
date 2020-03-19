@@ -10,7 +10,7 @@ const Content = styled.div`
   font-size: 20px;
   font-weight: 200;
   height: 100%;
-  justify-content: center;
+  justify-content: space-evenly;
   opacity: 0.9;
   text-align: center;
   width: 100%;
@@ -18,7 +18,7 @@ const Content = styled.div`
 
 const TextContainer = styled.div`
   flex-direction: column;
-  margin: 100px;
+  width: 30%;
 `;
 
 const HeaderText = styled.div`
@@ -36,10 +36,8 @@ const Image = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  margin: 30px;
-  padding: 100px;
   height: 90%;
-  width: 90%;
+  width: 25%;
   position: relative;
 `;
 
