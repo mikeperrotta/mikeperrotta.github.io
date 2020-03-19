@@ -21,7 +21,6 @@ const PROJECTS :Object[] = [
     image: EmpireAppImage,
     text: 'Empire',
     link: Routes.EMPIRE_APP,
-    external: true,
   },
 ];
 

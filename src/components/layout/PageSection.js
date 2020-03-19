@@ -12,6 +12,7 @@ const applyBgStyles = ({
       transform += ' scale(1.1)';
     }
     return css`
+      background-color: ${bgColor};
       background-image: url(${bgImage});
       background-position: ${bgImagePosition || 'center'};
       background-repeat: no-repeat;
