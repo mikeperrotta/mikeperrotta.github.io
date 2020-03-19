@@ -37,24 +37,23 @@ const Image = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   height: 90%;
-  width: 25%;
+  width: ${(props) => (props.imageWidth || '30%')};
   position: relative;
 `;
 
 type Props = {
-  header ? :string;
-  description ? :string;
-  image ? :string;
-  imageOnLeft ? :boolean;
+  section :Object;
 };
 
 /* react component */
-function ProjectSection({
-  header,
-  description,
-  image,
-  imageOnLeft
-} :Props) {
+function ProjectSection({ section } :Props) {
+  const {
+    header,
+    description,
+    image,
+    imageOnLeft,
+    imageWidth,
+  } = section;
   const textContainer = (
     <TextContainer>
       <HeaderText>
@@ -65,7 +64,6 @@ function ProjectSection({
       </DescriptionText>
     </TextContainer>
   );
-
   let content;
   if (!image) {
     content = textContainer;
@@ -73,7 +71,7 @@ function ProjectSection({
   else if (imageOnLeft) {
     content = (
       <>
-        <Image image={image} />
+        <Image image={image} imageWidth={imageWidth} />
         { textContainer }
       </>
     );
@@ -92,12 +90,5 @@ function ProjectSection({
     </Content>
   );
 }
-
-ProjectSection.defaultProps = {
-  header: '',
-  description: '',
-  image: undefined,
-  imageOnLeft: true,
-};
 
 export default ProjectSection;

@@ -1,18 +1,19 @@
 // @flow
+import React from 'react';
 
 import AmplitudeImage from '../../../assets/images/empire-app/amplitude.png';
 import AppLogo from '../../../assets/images/empire-app/logo.png';
 import ArticleImage from '../../../assets/images/empire-app/article-image-shadow1.png';
-import ArticleImageShadowed from '../../../assets/images/empire-app/article-image-shadow2.png';
 import ExpoDemo from '../../../assets/images/empire-app/expo-demo.gif';
 import XDDemo from '../../../assets/images/empire-app/xd-demo.png';
-import { NEUTRALS } from '../../../core/styles/Colors';
+import { COLORS, NEUTRALS } from '../../../core/styles/Colors';
 
 const EMPIRE_SECTIONS :Object[] = [
   {
     name: 'section_1',
     image: AppLogo,
     imageOnLeft: true,
+    imageWidth: '25%',
     header: 'The game',
     description: `Empire is my go-to game for large groups because it is easy to learn and
     works well with any number of players. The downside is that someone has
@@ -37,6 +38,7 @@ const EMPIRE_SECTIONS :Object[] = [
     name: 'section_3',
     image: ExpoDemo,
     imageOnLeft: true,
+    imageWidth: '35%',
     header: 'React Native and Expo',
     description: `I chose to use React Native because it would let me develop
     for both iOS and Android simultaneously and to use Expo because
@@ -55,16 +57,31 @@ const EMPIRE_SECTIONS :Object[] = [
     bgColor: NEUTRALS.WHITE,
   },
   {
-    name: 'section_5',
-    image: ArticleImage,
-    imageOnLeft: true,
-    header: 'Tutorial',
-    description: `I wrote an article giving more detail to each step.
+    bgColor: NEUTRALS.OFF_WHITE_BLUE,
+    description:
+  <>
+    I wrote an article giving more detail to each step.
     You can follow along with my steps in order to
     develop an app of your own, from concept to
-    App Store.`,
-    bgColor: NEUTRALS.OFF_WHITE_BLUE,
-  },
+    App Store. Read the&nbsp;
+    <a
+        href="https://www.openlattice.com"
+        rel="noreferrer noopener"
+        target="_blank"
+        style={{
+          color: COLORS.EMPIRE_BLUE,
+          fontWeight: 300,
+          textDecoration: 'none'
+        }}>
+      article here
+    </a>
+    .
+  </>,
+    header: 'Tutorial',
+    image: ArticleImage,
+    imageOnLeft: true,
+    name: 'section_5',
+  }
 ];
 
 export default EMPIRE_SECTIONS;
