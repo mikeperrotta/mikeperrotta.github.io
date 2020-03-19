@@ -15,7 +15,7 @@ const Content = styled.div`
   font-size: 86px;
   font-weight: 200;
   justify-content: center;
-  margin: 40px 140px 800px 140px;
+  margin: 40px 140px;
   max-width: 100%;
   padding: 100px 0px;
   text-align: center;

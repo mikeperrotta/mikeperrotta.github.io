@@ -4,6 +4,7 @@ import DeskImage from '../../assets/images/desk/desk.jpeg';
 import SpiceRackImage from '../../assets/images/spice-rack.jpeg';
 import ShoeRackImage from '../../assets/images/shoe-rack.jpeg';
 import MeditationArticleImage from '../../assets/images/meditation-article-cover-image-with-text.png';
+import EmpireAppImage from '../../assets/images/empire-app-image.png';
 
 import * as Routes from '../../core/router/Routes';
 
@@ -16,22 +17,11 @@ const PROJECTS :Object[] = [
     external: true,
   },
   {
-    name: 'Desk',
-    image: DeskImage,
-    text: 'Steel Pipe Desk',
-    link: Routes.DESK,
-  },
-  {
-    name: 'Spice Rack',
-    image: SpiceRackImage,
-    text: 'Reclaimed Wood Spice Rack',
-    link: Routes.SPICE_RACK,
-  },
-  {
-    name: 'Shoe Rack',
-    image: ShoeRackImage,
-    text: 'Copper Pipe Shoe Rack',
-    link: Routes.SHOE_RACK,
+    name: 'Empire App',
+    image: EmpireAppImage,
+    text: 'Empire',
+    link: Routes.EMPIRE_APP,
+    external: true,
   },
 ];
 
