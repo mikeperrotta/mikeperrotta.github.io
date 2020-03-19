@@ -1,4 +1,8 @@
-export const NEUTRALS = {
+const COLORS = {
+  EMPIRE_BLUE: '#4AA6F5',
+};
+
+const NEUTRALS = {
   BLACK: '#000',
   LIGHT_GRAY: '#F1EFEB',
   MED_LIGHT_GRAY: '#E8E5E1',
@@ -8,3 +12,5 @@ export const NEUTRALS = {
   OFF_WHITE_BLUE: '#F1F9FF',
   WHITE: '#fff',
 };
+
+export { COLORS, NEUTRALS };

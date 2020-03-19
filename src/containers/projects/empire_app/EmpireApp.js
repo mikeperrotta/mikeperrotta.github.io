@@ -8,7 +8,7 @@ import EMPIRE_APP from './EmpireAppSections';
 import ScrollToTopOnMount from '../../../core/router/RouterHelpers';
 import EmpireAppHeader from '../../../assets/images/empire-app/empire_app_header2x.png';
 
-import { NEUTRALS } from '../../../core/styles/Colors';
+import { COLORS, NEUTRALS } from '../../../core/styles/Colors';
 
 
 /* styled components */
@@ -32,7 +32,7 @@ const EmpireApp = () => (
   <>
     <ScrollToTopOnMount />
     <PageSection
-        bgColor="#4AA6F5"
+        bgColor={COLORS.EMPIRE_BLUE}
         bgImage={EmpireAppHeader}
         bgImagePosition="0% 28%"
         bgSize="contain"
