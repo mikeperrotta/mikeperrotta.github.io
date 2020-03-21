@@ -8,7 +8,7 @@ const Content = styled.div`
   align-items: center;
   background-color: ${NEUTRALS.DARK_GRAY};
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   height: 50px;
 `;
 
@@ -18,6 +18,7 @@ const Text = styled.div`
   font-size: 14px;
   font-style: normal;
   font-weight: 200;
+  margin: 0 20px;
   text-align: center;
 `;
 
