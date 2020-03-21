@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Footer from '../../../components/content/Footer';
 import Menu from '../../../components/content/Menu';
 import PageSection from '../../../components/layout/PageSection';
 import ProjectSection from '../../../components/content/ProjectSection';
@@ -48,6 +49,7 @@ const EmpireApp = () => (
         </PageSection>
       ))
     }
+    <Footer />
   </>
 );
 
