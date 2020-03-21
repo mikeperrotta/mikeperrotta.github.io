@@ -36,6 +36,7 @@ const Image = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  filter: ${(props) => (props.shadow || 'none')};
   height: 90%;
   width: ${(props) => (props.imageWidth || '30%')};
   position: relative;
@@ -53,6 +54,7 @@ function ProjectSection({ section } :Props) {
     image,
     imageOnLeft,
     imageWidth,
+    shadow,
   } = section;
   const textContainer = (
     <TextContainer>
@@ -68,21 +70,29 @@ function ProjectSection({ section } :Props) {
   if (!image) {
     content = textContainer;
   }
-  else if (imageOnLeft) {
-    content = (
-      <>
-        <Image image={image} imageWidth={imageWidth} />
-        { textContainer }
-      </>
-    );
-  }
   else {
-    content = (
-      <>
-        { textContainer }
-        <Image image={image} />
-      </>
+    const imageComponent = (
+      <Image
+          image={image}
+          imageWidth={imageWidth}
+          shadow={shadow} />
     );
+    if (imageOnLeft) {
+      content = (
+        <>
+          { imageComponent }
+          { textContainer }
+        </>
+      );
+    }
+    else {
+      content = (
+        <>
+          { textContainer }
+          { imageComponent }
+        </>
+      );
+    }
   }
   return (
     <Content>

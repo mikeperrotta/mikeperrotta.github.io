@@ -3,10 +3,12 @@ import React from 'react';
 
 import AmplitudeImage from '../../../assets/images/empire-app/amplitude.png';
 import AppLogo from '../../../assets/images/empire-app/logo.png';
-import ArticleImage from '../../../assets/images/empire-app/article-image-shadow1.png';
+import ArticleImage from '../../../assets/images/empire-app/article-image.png';
 import ExpoDemo from '../../../assets/images/empire-app/expo-demo.gif';
 import XDDemo from '../../../assets/images/empire-app/xd-demo.png';
 import { COLORS, NEUTRALS } from '../../../core/styles/Colors';
+
+const shadow = 'drop-shadow(2px 8px 6px rgba(0, 0, 0, 0.25))';
 
 const EMPIRE_SECTIONS :Object[] = [
   {
@@ -33,6 +35,7 @@ const EMPIRE_SECTIONS :Object[] = [
     created a design which isn’t too bad and then got to work on the app
     itself.`,
     bgColor: NEUTRALS.WHITE,
+    shadow,
   },
   {
     name: 'section_3',
@@ -44,6 +47,7 @@ const EMPIRE_SECTIONS :Object[] = [
     for both iOS and Android simultaneously and to use Expo because
     it saves a lot of the headache of setting up a new project.`,
     bgColor: NEUTRALS.OFF_WHITE_BLUE,
+    shadow,
   },
   {
     name: 'section_4',
@@ -55,6 +59,7 @@ const EMPIRE_SECTIONS :Object[] = [
     I used Amplitude as my analytics tool and found that
     it was very easy to integrate with my Expo project.`,
     bgColor: NEUTRALS.WHITE,
+    shadow,
   },
   {
     bgColor: NEUTRALS.OFF_WHITE_BLUE,
@@ -81,6 +86,7 @@ const EMPIRE_SECTIONS :Object[] = [
     image: ArticleImage,
     imageOnLeft: true,
     name: 'section_5',
+    shadow,
   }
 ];
 
