@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import EMPIRE_APP from './EmpireAppSections';
+import EmpireAppHeader from '../../../assets/images/empire-app/empire_app_header2x.png';
 import Footer from '../../../components/content/Footer';
 import Menu from '../../../components/content/Menu';
 import PageSection from '../../../components/layout/PageSection';
 import ProjectSection from '../../../components/content/ProjectSection';
-import EMPIRE_APP from './EmpireAppSections';
 import ScrollToTopOnMount from '../../../core/router/RouterHelpers';
-import EmpireAppHeader from '../../../assets/images/empire-app/empire_app_header2x.png';
 
 import { COLORS, NEUTRALS } from '../../../core/styles/Colors';
 
