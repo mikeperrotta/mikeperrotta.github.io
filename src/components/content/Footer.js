@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import { NEUTRALS } from '../../core/styles/Colors';
 
 const Content = styled.div`
-  height: 50px;
+  align-items: center;
   background-color: ${NEUTRALS.DARK_GRAY};
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  height: 50px;
 `;
 
 const Text = styled.div`
