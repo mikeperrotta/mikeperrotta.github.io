@@ -21,7 +21,7 @@ const EMPIRE_SECTIONS :Object[] = [
     works well with any number of players. The downside is that someone has
     to sit out during the game to collect all the answers and make up fake answers.
     I had been wanting to create an app with React Native for a while,
-    and this seemed like a great use for an app.`,
+    and this seemed like the perfect excuse.`,
     bgColor: NEUTRALS.OFF_WHITE_BLUE,
   },
   {
