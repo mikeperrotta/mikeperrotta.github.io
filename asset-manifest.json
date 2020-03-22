@@ -1,25 +1,31 @@
 {
   "files": {
-    "main.js": "/static/js/main.417b1174.chunk.js",
-    "main.js.map": "/static/js/main.417b1174.chunk.js.map",
+    "main.js": "/static/js/main.aef4ce9d.chunk.js",
+    "main.js.map": "/static/js/main.aef4ce9d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3bd99b2d.js",
     "runtime-main.js.map": "/static/js/runtime-main.3bd99b2d.js.map",
-    "static/js/2.32dd6da0.chunk.js": "/static/js/2.32dd6da0.chunk.js",
-    "static/js/2.32dd6da0.chunk.js.map": "/static/js/2.32dd6da0.chunk.js.map",
+    "static/js/2.04f06285.chunk.js": "/static/js/2.04f06285.chunk.js",
+    "static/js/2.04f06285.chunk.js.map": "/static/js/2.04f06285.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.61b7531e4282bc77bdd2c74e4fd6e82e.js": "/precache-manifest.61b7531e4282bc77bdd2c74e4fd6e82e.js",
+    "precache-manifest.ecca8b58a9cf6a200345f3afa06fe49a.js": "/precache-manifest.ecca8b58a9cf6a200345f3afa06fe49a.js",
     "service-worker.js": "/service-worker.js",
+    "static/media/amplitude.png": "/static/media/amplitude.96496e4a.png",
+    "static/media/article-image.png": "/static/media/article-image.1804dbfb.png",
     "static/media/desk.jpeg": "/static/media/desk.20230c04.jpeg",
-    "static/media/empire-app-image.png": "/static/media/empire-app-image.95257659.png",
+    "static/media/empire-app-image.png": "/static/media/empire-app-image.a8dcd2ea.png",
+    "static/media/empire_app_header2x.png": "/static/media/empire_app_header2x.55faed60.png",
+    "static/media/expo-demo.gif": "/static/media/expo-demo.07570f17.gif",
+    "static/media/logo.png": "/static/media/logo.1a5d0b2e.png",
     "static/media/meditation-article-cover-image-with-text.png": "/static/media/meditation-article-cover-image-with-text.056dd4a4.png",
     "static/media/rocky-morning.jpg": "/static/media/rocky-morning.b64114c0.jpg",
     "static/media/shoe-rack.jpeg": "/static/media/shoe-rack.a56dee01.jpeg",
     "static/media/spice-rack.jpeg": "/static/media/spice-rack.38da13c8.jpeg",
-    "static/media/wood_header.jpg": "/static/media/wood_header.acd5af0f.jpg"
+    "static/media/wood_header.jpg": "/static/media/wood_header.acd5af0f.jpg",
+    "static/media/xd-demo.png": "/static/media/xd-demo.b63166bd.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3bd99b2d.js",
-    "static/js/2.32dd6da0.chunk.js",
-    "static/js/main.417b1174.chunk.js"
+    "static/js/2.04f06285.chunk.js",
+    "static/js/main.aef4ce9d.chunk.js"
   ]
 }
