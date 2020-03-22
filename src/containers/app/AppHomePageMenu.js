@@ -9,7 +9,6 @@ import * as Routes from '../../core/router/Routes';
 
 const StickyWrapper = styled.div`
   align-items: center;
-  background-color: ${NEUTRALS.WHITE};
   bottom: 0;
   display: flex;
   height: ${(props) => props.height}px;
@@ -27,12 +26,12 @@ const Menu = styled.div`
   z-index: 200;
 
   ${(props) => (props.isSticky ? css`
-    background-color: ${NEUTRALS.ALMOST_DARK_GRAY};
+    background-color: ${NEUTRALS.LIGHT_BACKGROUND};
     position: fixed;
     top: 0;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     ` : `
-    background-color: ${NEUTRALS.DARK_GRAY};
+    background-color: ${NEUTRALS.LIGHT_BACKGROUND};
     bottom: 0;
     position: absolute;
     box-shadow: none;
@@ -42,7 +41,7 @@ const Menu = styled.div`
 
 const getLinkStyles = () => (
   css`
-    color: ${NEUTRALS.LIGHT_GRAY};
+    color: ${NEUTRALS.DARK_TEXT};
     font-size: 24px;
     font-style: normal;
     font-weight: 200;
@@ -51,7 +50,7 @@ const getLinkStyles = () => (
     text-decoration: none;
 
    &:hover {
-     color: ${NEUTRALS.LIGHT_GRAY};
+     color: ${NEUTRALS.BLACK};
      cursor: pointer;
    }
   `

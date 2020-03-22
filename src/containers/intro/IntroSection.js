@@ -12,7 +12,6 @@ import { NEUTRALS } from '../../core/styles/Colors';
 /* styled components */
 const Content = styled.div`
   align-items: center;
-  color: ${NEUTRALS.WHITE};
   display: block;
   flex-direction: column;
   margin: 170px auto 0px auto;
@@ -21,7 +20,7 @@ const Content = styled.div`
 `;
 
 const TitleText = styled.div`
-  color: ${NEUTRALS.DARK_GRAY};
+  color: ${NEUTRALS.DARK_TEXT};
   font-family: Muli;
   font-size: 72px;
   font-style: normal;
@@ -31,12 +30,12 @@ const TitleText = styled.div`
 `;
 
 const SubtitleLine = styled.div`
-  border: 1px solid ${NEUTRALS.DARK_GRAY};
+  border: 1px solid ${NEUTRALS.DARK_TEXT};
   margin: 15px;
 `;
 
 const SubtitleText = styled.div`
-  color: ${NEUTRALS.DARK_GRAY};
+  color: ${NEUTRALS.DARK_TEXT};
   font-family: Muli;
   font-size: 48px;
   font-style: normal;

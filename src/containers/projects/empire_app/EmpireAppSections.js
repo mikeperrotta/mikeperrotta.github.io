@@ -22,7 +22,7 @@ const EMPIRE_SECTIONS :Object[] = [
     to sit out during the game to collect all the answers and make up fake answers.
     I had been wanting to create an app with React Native for a while,
     and this seemed like the perfect excuse.`,
-    bgColor: NEUTRALS.OFF_WHITE_BLUE,
+    bgColor: NEUTRALS.WHITE,
   },
   {
     name: 'section_2',
@@ -34,7 +34,7 @@ const EMPIRE_SECTIONS :Object[] = [
     too much thought into making it perfect. It could be improved, but I
     created a design which isn’t too bad and then got to work on the app
     itself.`,
-    bgColor: NEUTRALS.WHITE,
+    bgColor: NEUTRALS.OFF_WHITE_BLUE,
     shadow,
   },
   {
@@ -46,7 +46,7 @@ const EMPIRE_SECTIONS :Object[] = [
     description: `I chose to use React Native because it would let me develop
     for both iOS and Android simultaneously and to use Expo because
     it saves a lot of the headache of setting up a new project.`,
-    bgColor: NEUTRALS.OFF_WHITE_BLUE,
+    bgColor: NEUTRALS.WHITE,
     shadow,
   },
   {
@@ -58,11 +58,11 @@ const EMPIRE_SECTIONS :Object[] = [
     and how long they were spending on each screen.
     I used Amplitude as my analytics tool and found that
     it was very easy to integrate with my Expo project.`,
-    bgColor: NEUTRALS.WHITE,
+    bgColor: NEUTRALS.OFF_WHITE_BLUE,
     shadow,
   },
   {
-    bgColor: NEUTRALS.OFF_WHITE_BLUE,
+    bgColor: NEUTRALS.WHITE,
     description:
   <>
     I wrote an article giving more detail to each step.

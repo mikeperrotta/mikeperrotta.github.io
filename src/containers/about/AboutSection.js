@@ -11,7 +11,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  color: ${NEUTRALS.WHITE};
+  color: ${NEUTRALS.DARK_TEXT};
   font-size: 86px;
   font-weight: 200;
   justify-content: center;
@@ -23,7 +23,7 @@ const Content = styled.div`
 
 /* react component */
 const AboutSection = () => (
-  <PageSection bgColor={NEUTRALS.DARK_GRAY}>
+  <PageSection bgColor={NEUTRALS.LIGHT_BACKGROUND}>
     <Content id="about">
       Coming soon...
     </Content>

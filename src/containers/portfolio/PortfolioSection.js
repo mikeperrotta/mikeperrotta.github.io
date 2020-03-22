@@ -21,7 +21,7 @@ const Content = styled.div`
 
 /* react component */
 const PortfolioSection = () => (
-  <PageSection bgColor={NEUTRALS.DARK_GRAY}>
+  <PageSection bgColor={NEUTRALS.LIGHT_BACKGROUND}>
     <Content id="projects">
       {
         PROJECTS.map((project) => (

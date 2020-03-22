@@ -15,7 +15,7 @@ const StickyWrapper = styled.div`
 
 const Content = styled.div`
   align-items: center;
-  background: ${NEUTRALS.DARK_GRAY};
+  background: ${NEUTRALS.LIGHT_BACKGROUND};
   display: flex;
   flex-direction: row;
   font-size: 20px;
@@ -27,11 +27,11 @@ const Content = styled.div`
   z-index: 200;
 
   ${(props) => (props.isSticky ? css`
-  opacity: 0.975;
+  opacity: 0.98;
   position: fixed;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
   ` : `
-  opacity: 0.85;
+  opacity: 1.0;
   position: absolute;
   box-shadow: none;
   `)}
@@ -40,25 +40,25 @@ const Content = styled.div`
 const MenuSubArea = styled.div``;
 
 const Link = styled(NavLink)`
-  color: ${NEUTRALS.LIGHT_GRAY};
+  color: ${NEUTRALS.DARK_TEXT};
   justify-content: center;
   margin: 0px 20px;
   text-decoration: none;
 
   &:hover {
-    color: ${NEUTRALS.LIGHT_GRAY};
+    color: ${NEUTRALS.DARK_TEXT};
     cursor: pointer;
   }
 `;
 
 const HashLink = styled(NavHashLink)`
-  color: ${NEUTRALS.LIGHT_GRAY};
+  color: ${NEUTRALS.DARK_TEXT};
   justify-content: center;
   margin: 0px 20px;
   text-decoration: none;
 
   &:hover {
-    color: ${NEUTRALS.LIGHT_GRAY};
+    color: ${NEUTRALS.DARK_TEXT};
     cursor: pointer;
   }
 `;

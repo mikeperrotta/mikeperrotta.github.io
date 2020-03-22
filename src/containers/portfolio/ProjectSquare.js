@@ -10,6 +10,7 @@ const SquareWrapper = styled.div`
   align-items: center;
   background-color: transparent;
   border-radius: .75%;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
   display: flex;
   height: 340px;
   justify-content: center;
@@ -47,7 +48,7 @@ const BackgroundImage = styled.div`
 `;
 
 const ProjectText = styled.div`
-  color: ${NEUTRALS.LIGHT_GRAY};
+  color: ${NEUTRALS.LIGHT_TEXT};
   font-family: Muli;
   font-size: 42px;
   font-style: normal;
