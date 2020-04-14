@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import AppHomePageMenu from '../app/AppHomePageMenu';
 import PageSection from '../../components/layout/PageSection';
-import RockyMorning from '../../assets/images/rocky-morning.jpg';
+import KeyboardImage from '../../assets/images/white-keyboard.jpg';
 
 import { NEUTRALS } from '../../core/styles/Colors';
 
@@ -47,9 +47,8 @@ const SubtitleText = styled.div`
 /* react component */
 const IntroSection = () => (
   <PageSection
-      bgImage={RockyMorning}
+      bgImage={KeyboardImage}
       blur={6}
-      flipHorizontal
       height="100%">
     <Content>
       <TitleText>
