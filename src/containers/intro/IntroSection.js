@@ -29,21 +29,6 @@ const TitleText = styled.div`
   text-align: center;
 `;
 
-const SubtitleLine = styled.div`
-  border: 1px solid ${NEUTRALS.DARK_TEXT};
-  margin: 15px;
-`;
-
-const SubtitleText = styled.div`
-  color: ${NEUTRALS.DARK_TEXT};
-  font-family: Muli;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 200;
-  line-height: 60px;
-  text-align: center;
-`;
-
 /* react component */
 const IntroSection = () => (
   <PageSection
@@ -51,12 +36,8 @@ const IntroSection = () => (
       height="100%">
     <Content>
       <TitleText>
-        MIKE PERROTTA
+        mike perrotta
       </TitleText>
-      <SubtitleLine />
-      <SubtitleText>
-        Scientist, Writer, Coder
-      </SubtitleText>
     </Content>
     <AppHomePageMenu />
   </PageSection>
