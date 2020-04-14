@@ -54,23 +54,13 @@ const EMPIRE_SECTIONS :Object[] = [
     image: AmplitudeImage,
     imageOnLeft: false,
     header: 'Analytics',
-    description: `I wanted to know when people were using my app
-    and how long they were spending on each screen.
-    I used Amplitude as my analytics tool and found that
-    it was very easy to integrate with my Expo project.`,
-    bgColor: NEUTRALS.OFF_WHITE_BLUE,
-    shadow,
-  },
-  {
-    bgColor: NEUTRALS.WHITE,
     description:
   <>
-    I wrote an article giving more detail to each step.
-    You can follow along with my steps in order to
-    develop an app of your own, from concept to
-    App Store. Read the&nbsp;
+    I wanted to know when people were using my app
+    and how long they were spending on each screen.
+    I used&nbsp;
     <a
-        href="https://www.openlattice.com"
+        href="https://amplitude.com"
         rel="noreferrer noopener"
         target="_blank"
         style={{
@@ -78,7 +68,44 @@ const EMPIRE_SECTIONS :Object[] = [
           fontWeight: 300,
           textDecoration: 'none'
         }}>
-      article here
+      Amplitude
+    </a>
+    &nbsp;as my analytics tool and found that
+    it was very easy to integrate with my Expo project.
+  </>,
+    bgColor: NEUTRALS.OFF_WHITE_BLUE,
+    shadow,
+  },
+  {
+    bgColor: NEUTRALS.WHITE,
+    description:
+  <>
+    I wrote a tutorial giving more detail to each step.
+    You can follow along with my steps in order to
+    develop an app of your own, from concept to App Store.
+    See the&nbsp;
+    <a
+        href="https://apps.apple.com/us/app/empire-party-game/id1494647723"
+        rel="noreferrer noopener"
+        target="_blank"
+        style={{
+          color: COLORS.EMPIRE_BLUE,
+          fontWeight: 300,
+          textDecoration: 'none'
+        }}>
+      finished app here
+    </a>
+    &nbsp;and the&nbsp;
+    <a
+        href="https://blog.bitsrc.io/building-a-react-native-app-with-expo-530ddef0e1ab"
+        rel="noreferrer noopener"
+        target="_blank"
+        style={{
+          color: COLORS.EMPIRE_BLUE,
+          fontWeight: 300,
+          textDecoration: 'none'
+        }}>
+      tutorial here
     </a>
     .
   </>,
