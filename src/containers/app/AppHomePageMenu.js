@@ -8,21 +8,16 @@ import { NEUTRALS } from '../../core/styles/Colors';
 import * as Routes from '../../core/router/Routes';
 
 const StickyWrapper = styled.div`
-  align-items: center;
-  bottom: 0;
-  display: flex;
-  height: ${(props) => props.height}px;
-  justify-content: center;
+  top: 0;
   position: absolute;
   width: 100%;
 `;
 
 const Menu = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  padding: 0 32px;
   position: fixed;
   width: 100%;
+  height: 72px;
   z-index: 200;
 
   ${(props) => (props.isSticky ? css`
@@ -32,42 +27,56 @@ const Menu = styled.div`
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     ` : `
     background-color: ${NEUTRALS.LIGHT_BACKGROUND};
-    bottom: 0;
+    top: 0;
     position: absolute;
     box-shadow: none;
     `
   )}
 `;
 
-const getLinkStyles = () => (
-  css`
-    color: ${NEUTRALS.DARK_TEXT};
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: 30px;
-    margin: 12px 80px;
-    text-decoration: none;
-
-   &:hover {
-     color: ${NEUTRALS.BLACK};
-     cursor: pointer;
-   }
-  `
-);
-
 const MenuHashLink = styled(NavHashLink)`
-  ${getLinkStyles}
+  ${(props) => props.pos};
+  color: ${NEUTRALS.DARK_TEXT};
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 30px;
+  top: calc(50% - 36px / 2);
+  position: absolute;
+  text-decoration: none;
+  transition: left 0.3s;
+
+  &:hover {
+   color: ${NEUTRALS.BLACK};
+   cursor: pointer;
+  }
 `;
+
+const titleWidth = 142.19;
+const projWidth = 84.56;
+const aboutWidth = 62.5;
+const menuMargin = 48;
+
+const titleCentered = `left: calc(50% - ${titleWidth}px / 2)`;
+const titleLeft = `left: calc(${menuMargin}px)`;
+const projRight = `left: calc(100% - calc(${projWidth}px + ${aboutWidth}px + calc(${menuMargin}px * 2)))`
+const projLeft = `left: calc(${titleWidth}px + calc(${menuMargin}px * 2))`;
+const aboutRight = `left: calc(100% - calc(${aboutWidth}px + ${menuMargin}px))`;
+const aboutLeft = `left: calc(${titleWidth}px + ${projWidth}px + calc(${menuMargin}px * 3))`;
 
 const AppHomePageMenu = () => {
   const [isSticky, setStickiness] = useState(false);
-  const [menuHeight, setMenuHeight] = useState(80);
+  const [titlePos, setTitlePos] = useState(titleCentered);
+  const [projPos, setProjPos] = useState(projRight);
+  const [aboutPos, setAboutPos] = useState(aboutRight);
   const ref = useRef({});
-  const menuRef = useRef({});
   const handleScroll = () => {
     if (ref.current) {
-      setStickiness(ref.current.getBoundingClientRect().top <= 0);
+      const menuPos = ref.current.getBoundingClientRect().top;
+      setStickiness(menuPos < 0);
+      setTitlePos(menuPos < 0 ? titleLeft : titleCentered);
+      setProjPos(menuPos < 0 ? projLeft : projRight);
+      setAboutPos(menuPos < 0 ? aboutLeft : aboutRight);
     }
   };
   useEffect(() => {
@@ -76,20 +85,24 @@ const AppHomePageMenu = () => {
       window.removeEventListener('scroll', () => handleScroll);
     };
   }, []);
-  useEffect(() => {
-    setMenuHeight(menuRef.current.offsetHeight);
-  }, []);
-
   return (
-    <StickyWrapper ref={ref} height={menuHeight}>
-      <Menu isSticky={isSticky} ref={menuRef}>
+    <StickyWrapper ref={ref}>
+      <Menu isSticky={isSticky}>
         <MenuHashLink
             smooth
+            pos={titlePos}
+            to={Routes.PORTFOLIO}>
+          mike perrotta
+        </MenuHashLink>
+        <MenuHashLink
+            smooth
+            pos={projPos}
             to={Routes.PORTFOLIO}>
           projects
         </MenuHashLink>
         <MenuHashLink
             smooth
+            pos={aboutPos}
             to={Routes.ABOUT}>
           about
         </MenuHashLink>

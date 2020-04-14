@@ -34,12 +34,12 @@ const IntroSection = () => (
   <PageSection
       bgImage={KeyboardImage}
       height="100%">
+    <AppHomePageMenu />
     <Content>
       <TitleText>
         mike perrotta
       </TitleText>
     </Content>
-    <AppHomePageMenu />
   </PageSection>
 );
 
