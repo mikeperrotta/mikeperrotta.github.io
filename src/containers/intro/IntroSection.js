@@ -48,7 +48,6 @@ const SubtitleText = styled.div`
 const IntroSection = () => (
   <PageSection
       bgImage={KeyboardImage}
-      blur={6}
       height="100%">
     <Content>
       <TitleText>
