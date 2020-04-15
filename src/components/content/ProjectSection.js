@@ -37,7 +37,7 @@ const Image = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   filter: ${(props) => (props.shadow || 'none')};
-  height: 90%;
+  height: ${(props) => (props.imageHeight || 'calc(100% - 120px)')};
   width: ${(props) => (props.imageWidth || '30%')};
   position: relative;
 `;
@@ -53,6 +53,7 @@ function ProjectSection({ section } :Props) {
     description,
     image,
     imageOnLeft,
+    imageHeight,
     imageWidth,
     shadow,
   } = section;
@@ -74,6 +75,7 @@ function ProjectSection({ section } :Props) {
     const imageComponent = (
       <Image
           image={image}
+          imageHeight={imageHeight}
           imageWidth={imageWidth}
           shadow={shadow} />
     );
