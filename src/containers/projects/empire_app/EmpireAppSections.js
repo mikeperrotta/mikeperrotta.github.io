@@ -7,22 +7,25 @@ import ArticleImage from '../../../assets/images/empire-app/article-image.png';
 import ExpoDemo from '../../../assets/images/empire-app/expo-demo.gif';
 import XDDemo from '../../../assets/images/empire-app/xd-demo.png';
 import { COLORS, NEUTRALS } from '../../../core/styles/Colors';
+import * as Routes from '../../../core/router/Routes';
 
 const shadow = 'drop-shadow(2px 8px 6px rgba(0, 0, 0, 0.25))';
 
 const EMPIRE_SECTIONS :Object[] = [
   {
     name: 'section_1',
+    buttonText: 'Check out the app',
     image: AppLogo,
     imageOnLeft: true,
     imageWidth: '25%',
     header: 'The game',
     description: `Empire is my go-to game for large groups because it is easy to learn and
     works well with any number of players. The downside is that someone has
-    to sit out during the game to collect all the answers and make up fake answers.
-    I had been wanting to create an app with React Native for a while,
-    and this seemed like the perfect excuse.`,
+    to sit out to facilitate the game. I wanted to create an app with React Native,
+    and this seemed like a great excuse.`,
     bgColor: NEUTRALS.WHITE,
+    link: Routes.EMPIRE_APP_APP_STORE,
+    external: true,
   },
   {
     name: 'section_2',
@@ -78,42 +81,17 @@ const EMPIRE_SECTIONS :Object[] = [
   },
   {
     bgColor: NEUTRALS.WHITE,
-    description:
-  <>
-    I wrote a tutorial giving more detail to each step.
+    description: `I wrote a tutorial giving more detail to each step.
     You can follow along with my steps in order to
-    develop an app of your own, from concept to App Store.
-    See the&nbsp;
-    <a
-        href="https://apps.apple.com/us/app/empire-party-game/id1494647723"
-        rel="noreferrer noopener"
-        target="_blank"
-        style={{
-          color: COLORS.EMPIRE_BLUE,
-          fontWeight: 300,
-          textDecoration: 'none'
-        }}>
-      finished app here
-    </a>
-    &nbsp;and the&nbsp;
-    <a
-        href="https://blog.bitsrc.io/building-a-react-native-app-with-expo-530ddef0e1ab"
-        rel="noreferrer noopener"
-        target="_blank"
-        style={{
-          color: COLORS.EMPIRE_BLUE,
-          fontWeight: 300,
-          textDecoration: 'none'
-        }}>
-      tutorial here
-    </a>
-    .
-  </>,
+    develop an app of your own, from concept to App Store.`,
     header: 'Tutorial',
     image: ArticleImage,
     imageOnLeft: true,
     name: 'section_5',
     shadow,
+    buttonText: 'Read the tutorial',
+    link: Routes.EMPIRE_APP_TUTORIAL,
+    external: true,
   }
 ];
 
