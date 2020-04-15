@@ -108,7 +108,7 @@ const AppHomePageMenu = () => {
         <MenuHashLink
             smooth
             pos={titlePos}
-            to={Routes.PORTFOLIO}>
+            to={Routes.HOME}>
           mike perrotta
         </MenuHashLink>
         <MenuHashLink
