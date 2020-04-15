@@ -36,7 +36,7 @@ const IntroSection = () => (
       height="100%">
     <AppHomePageMenu />
     <Content>
-      <TitleText>
+      <TitleText id="TitleText">
         mike perrotta
       </TitleText>
     </Content>
