@@ -8,7 +8,7 @@ const Content = styled.div`
   align-items: center;
   background-color: ${NEUTRALS.LIGHT_BACKGROUND};
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   height: 50px;
 `;
 
@@ -24,7 +24,7 @@ const Text = styled.div`
 
 const Footer = () => (
   <Content>
-    <Text>© Mike Perrotta 2020</Text>
+    <Text>© Mike Perrotta 2020. Made by me.</Text>
   </Content>
 );
 
