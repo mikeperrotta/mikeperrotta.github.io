@@ -20,7 +20,7 @@ const EMPIRE_SECTIONS :Object[] = [
     imageWidth: '25%',
     header: 'The game',
     description: `Empire is my go-to game for large groups because it is easy to learn and
-    works well with any number of players. The downside is that someone has
+    works well with any number of players. The downside is someone has
     to sit out to facilitate the game. I wanted to create an app with React Native,
     and this seemed like a great excuse.`,
     bgColor: NEUTRALS.WHITE,
@@ -33,10 +33,8 @@ const EMPIRE_SECTIONS :Object[] = [
     imageOnLeft: false,
     header: 'Design',
     description: `I used Adobe XD to design the visuals and the navigation pathways.
-    One decision that saved me time was to design a logo without putting
-    too much thought into making it perfect. It could be improved, but I
-    created a design which isn’t too bad and then got to work on the app
-    itself.`,
+    Creating the designs without letting myself get hung up on perfection
+    allowed me to start coding quickly and with efficiency.`,
     bgColor: NEUTRALS.OFF_WHITE_BLUE,
     shadow,
   },
@@ -46,9 +44,9 @@ const EMPIRE_SECTIONS :Object[] = [
     imageOnLeft: true,
     imageWidth: '35%',
     header: 'React Native and Expo',
-    description: `I chose to use React Native because it would let me develop
-    for both iOS and Android simultaneously and to use Expo because
-    it saves a lot of the headache of setting up a new project.`,
+    description: `I used React Native so I could develop
+    for both iOS and Android simultaneously. I used Expo because
+    it saves a lot of the headache of setting up a new React Native project.`,
     bgColor: NEUTRALS.WHITE,
     shadow,
   },
@@ -74,7 +72,7 @@ const EMPIRE_SECTIONS :Object[] = [
       Amplitude
     </a>
     &nbsp;as my analytics tool and found that
-    it was very easy to integrate with my Expo project.
+    it was very easy to integrate into my Expo project.
   </>,
     bgColor: NEUTRALS.OFF_WHITE_BLUE,
     shadow,
