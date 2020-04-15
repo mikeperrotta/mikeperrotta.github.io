@@ -14,22 +14,22 @@ const StickyWrapper = styled.div`
 `;
 
 const Menu = styled.div`
+  height: 72px;
   padding: 0 32px;
   position: fixed;
   width: 100%;
-  height: 72px;
   z-index: 200;
 
   ${(props) => (props.isSticky ? css`
     background-color: ${NEUTRALS.LIGHT_BACKGROUND};
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     ` : `
     background-color: ${NEUTRALS.LIGHT_BACKGROUND};
-    top: 0;
-    position: absolute;
     box-shadow: none;
+    position: absolute;
+    top: 0;
     `
   )}
 `;
@@ -40,11 +40,11 @@ const MenuHashLink = styled(NavHashLink)`
   font-style: normal;
   font-weight: 200;
   line-height: 30px;
-  top: calc(50% - 36px / 2);
+  opacity: 1;
   position: absolute;
   text-decoration: none;
+  top: calc(50% - 36px / 2);
   transition: left 0.3s, opacity 0.3s;
-  opacity: 1;
 
   ${(props) => props.pos};
 
@@ -138,22 +138,22 @@ const AppHomePageMenu = () => {
     <StickyWrapper ref={ref}>
       <Menu isSticky={isSticky}>
         <MenuHashLink
-            smooth
             pos={titlePos}
+            smooth
             to={Routes.HOME}>
           mike perrotta
         </MenuHashLink>
         <MenuHashLink
-            smooth
             pos={projPos}
             scroll={scrollWithOffset}
+            smooth
             to={Routes.PORTFOLIO}>
           projects
         </MenuHashLink>
         <MenuHashLink
-            smooth
             pos={aboutPos}
             scroll={scrollWithOffset}
+            smooth
             to={Routes.ABOUT}>
           about
         </MenuHashLink>

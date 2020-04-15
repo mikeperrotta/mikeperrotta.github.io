@@ -16,16 +16,16 @@ const Content = styled.div`
 
 const TextContainer = styled.div`
   font-size: 20px;
-  max-width: 500px;
-  margin: 0 50px;
   font-weight: 200;
+  margin: 0 50px;
+  max-width: 500px;
 `;
 
 const faceImageStyles = {
-  margin: '60px',
-  width: '414px',
-  maxWidth: '80%',
   borderRadius: '50%',
+  margin: '60px',
+  maxWidth: '80%',
+  width: '414px',
 };
 
 const AboutText = (

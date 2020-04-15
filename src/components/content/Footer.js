@@ -8,8 +8,8 @@ const Content = styled.div`
   align-items: center;
   background-color: ${NEUTRALS.LIGHT_BACKGROUND};
   display: flex;
-  justify-content: flex-start;
   height: 50px;
+  justify-content: flex-start;
 `;
 
 const Text = styled.div`

@@ -70,8 +70,8 @@ const Image = styled.div`
   background-size: contain;
   filter: ${(props) => (props.shadow || 'none')};
   height: ${(props) => (props.imageHeight || 'calc(100% - 120px)')};
-  width: ${(props) => (props.imageWidth || '30%')};
   position: relative;
+  width: ${(props) => (props.imageWidth || '30%')};
 `;
 
 type Props = {
