@@ -54,14 +54,6 @@ const MenuHashLink = styled(NavHashLink)`
   }
 `;
 
-const getElementYCoordinate = (el) => el.getBoundingClientRect().top + window.pageYOffset;
-
-const scrollWithOffset = (el) => {
-  const yCoordinate = getElementYCoordinate(el);
-  const yOffset = -71;
-  window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
-};
-
 const titleWidth = 142.19;
 const projWidth = 84.56;
 const aboutWidth = 62.5;
@@ -78,6 +70,14 @@ const projCenter = css`left: calc(50% - ${projWidth}px / 2);`;
 const projLeft = css`left: calc(${titleWidth}px + calc(${menuMargin}px * 2));`;
 const aboutRight = css`left: calc(100% - calc(${aboutWidth}px + ${menuMargin}px));`;
 const aboutCenter = css`left: calc(50% - ${aboutWidth}px / 2);`;
+
+const getElementYCoordinate = (el) => el.getBoundingClientRect().top + window.pageYOffset;
+
+const scrollWithOffset = (el) => {
+  const yCoordinate = getElementYCoordinate(el);
+  const yOffset = -71;
+  window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+};
 
 const AppHomePageMenu = () => {
   const [isSticky, setStickiness] = useState(false);
