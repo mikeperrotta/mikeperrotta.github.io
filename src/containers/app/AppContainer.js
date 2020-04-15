@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import AppHomePage from './AppHomePage';
-import AppAboutPage from './AppAboutPage';
 import SpiceRack from '../projects/spicerack/SpiceRack';
 import EmpireApp from '../projects/empire_app/EmpireApp';
 import * as Routes from '../../core/router/Routes';
