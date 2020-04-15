@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import PageSection from '../../components/layout/PageSection';
 import ProjectSection from '../../components/content/ProjectSection';
@@ -6,7 +6,7 @@ import PROJECTS from './Projects';
 
 /* react component */
 const PortfolioSection = () => (
-  <Fragment id="projects">
+  <div id="projects">
     {
       PROJECTS.map((section) => (
         <PageSection bgColor={section.bgColor} height="550px" key={section.name}>
@@ -15,7 +15,7 @@ const PortfolioSection = () => (
         </PageSection>
       ))
     }
-  </Fragment>
+  </div>
 );
 
 export default PortfolioSection;
