@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5927eb13276931b0b6ef3c8fcff45fc6",
+    "revision": "a4857d89e4142787b81d73006587a099",
     "url": "/index.html"
   },
   {
-    "revision": "13f2bb574884af6a3231",
-    "url": "/static/js/2.04f06285.chunk.js"
+    "revision": "0ecd243610d636de2ed8",
+    "url": "/static/js/2.f1ce801a.chunk.js"
   },
   {
-    "revision": "5ca6e268e0a1d7df5fe9",
-    "url": "/static/js/main.1a11dd62.chunk.js"
+    "revision": "5b9c101395cae5fe801d",
+    "url": "/static/js/main.48e4f31c.chunk.js"
   },
   {
     "revision": "388e3583aa4a13ce8593",
@@ -24,10 +24,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/article-image.1804dbfb.png"
   },
   {
-    "revision": "20230c04c03b21458c2adb09f4249a83",
-    "url": "/static/media/desk.20230c04.jpeg"
-  },
-  {
     "revision": "a8dcd2eacc71d090d57a096fc8c6bae4",
     "url": "/static/media/empire-app-image.a8dcd2ea.png"
   },
@@ -40,6 +36,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/expo-demo.07570f17.gif"
   },
   {
+    "revision": "ca8de44336b3582ccd12d939087d60bb",
+    "url": "/static/media/headshot.ca8de443.jpg"
+  },
+  {
     "revision": "1a5d0b2e54e6d7c6b7f41dca10969c79",
     "url": "/static/media/logo.1a5d0b2e.png"
   },
@@ -48,16 +48,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/meditation-article-cover-image-with-text.056dd4a4.png"
   },
   {
-    "revision": "b64114c08c4603e27298fc239f436fa0",
-    "url": "/static/media/rocky-morning.b64114c0.jpg"
-  },
-  {
-    "revision": "a56dee01155738686b711e15eaa9db49",
-    "url": "/static/media/shoe-rack.a56dee01.jpeg"
+    "revision": "9200c039b62a98b239c369139717e7eb",
+    "url": "/static/media/neosensory-image.9200c039.png"
   },
   {
     "revision": "38da13c8e59fe88f72f9bab6d2abbca9",
     "url": "/static/media/spice-rack.38da13c8.jpeg"
+  },
+  {
+    "revision": "0c1b1e205e5e8ae0cd098f810a3f93b1",
+    "url": "/static/media/white-keyboard.0c1b1e20.jpg"
   },
   {
     "revision": "acd5af0f8da20c7553a5c50cf51b3640",

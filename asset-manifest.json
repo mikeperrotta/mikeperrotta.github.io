@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.js": "/static/js/main.1a11dd62.chunk.js",
-    "main.js.map": "/static/js/main.1a11dd62.chunk.js.map",
+    "main.js": "/static/js/main.48e4f31c.chunk.js",
+    "main.js.map": "/static/js/main.48e4f31c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3bd99b2d.js",
     "runtime-main.js.map": "/static/js/runtime-main.3bd99b2d.js.map",
-    "static/js/2.04f06285.chunk.js": "/static/js/2.04f06285.chunk.js",
-    "static/js/2.04f06285.chunk.js.map": "/static/js/2.04f06285.chunk.js.map",
+    "static/js/2.f1ce801a.chunk.js": "/static/js/2.f1ce801a.chunk.js",
+    "static/js/2.f1ce801a.chunk.js.map": "/static/js/2.f1ce801a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.dc2dd960b9685dc2016879c5243df369.js": "/precache-manifest.dc2dd960b9685dc2016879c5243df369.js",
+    "precache-manifest.13a61de9a958232d4215500a2a01b0e5.js": "/precache-manifest.13a61de9a958232d4215500a2a01b0e5.js",
     "service-worker.js": "/service-worker.js",
     "static/media/amplitude.png": "/static/media/amplitude.96496e4a.png",
     "static/media/article-image.png": "/static/media/article-image.1804dbfb.png",
-    "static/media/desk.jpeg": "/static/media/desk.20230c04.jpeg",
     "static/media/empire-app-image.png": "/static/media/empire-app-image.a8dcd2ea.png",
     "static/media/empire_app_header2x.png": "/static/media/empire_app_header2x.55faed60.png",
     "static/media/expo-demo.gif": "/static/media/expo-demo.07570f17.gif",
+    "static/media/headshot.jpg": "/static/media/headshot.ca8de443.jpg",
     "static/media/logo.png": "/static/media/logo.1a5d0b2e.png",
     "static/media/meditation-article-cover-image-with-text.png": "/static/media/meditation-article-cover-image-with-text.056dd4a4.png",
-    "static/media/rocky-morning.jpg": "/static/media/rocky-morning.b64114c0.jpg",
-    "static/media/shoe-rack.jpeg": "/static/media/shoe-rack.a56dee01.jpeg",
+    "static/media/neosensory-image.png": "/static/media/neosensory-image.9200c039.png",
     "static/media/spice-rack.jpeg": "/static/media/spice-rack.38da13c8.jpeg",
+    "static/media/white-keyboard.jpg": "/static/media/white-keyboard.0c1b1e20.jpg",
     "static/media/wood_header.jpg": "/static/media/wood_header.acd5af0f.jpg",
     "static/media/xd-demo.png": "/static/media/xd-demo.b63166bd.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3bd99b2d.js",
-    "static/js/2.04f06285.chunk.js",
-    "static/js/main.1a11dd62.chunk.js"
+    "static/js/2.f1ce801a.chunk.js",
+    "static/js/main.48e4f31c.chunk.js"
   ]
 }
