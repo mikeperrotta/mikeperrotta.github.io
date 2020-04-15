@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import AboutImage from '../../assets/images/about/headshot.jpg'
-import BuchImage from '../../assets/images/about/stand-in-buch.jpg'
+import AboutImage from '../../assets/images/about/headshot.jpg';
+import BuchImage from '../../assets/images/about/stand-in-buch.jpg';
 import PageSection from '../../components/layout/PageSection';
 import { NEUTRALS } from '../../core/styles/Colors';
 
@@ -16,8 +16,8 @@ const Content = styled.div`
 `;
 
 const TextContainer = styled.div`
-  font-size: 28px;
-  max-width: 600px;
+  font-size: 20px;
+  max-width: 500px;
   margin: 0 50px;
   font-weight: 200;
 `;
