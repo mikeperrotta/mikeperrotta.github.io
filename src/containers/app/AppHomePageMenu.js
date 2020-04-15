@@ -54,8 +54,10 @@ const MenuHashLink = styled(NavHashLink)`
   }
 `;
 
+const getElementYCoordinate = (el) => el.getBoundingClientRect().top + window.pageYOffset;
+
 const scrollWithOffset = (el) => {
-  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+  const yCoordinate = getElementYCoordinate(el);
   const yOffset = -71;
   window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
 };
@@ -75,7 +77,7 @@ const projRight = css`left: calc(100% - calc(${projWidth}px + ${aboutWidth}px + 
 const projCenter = css`left: calc(50% - ${projWidth}px / 2);`;
 const projLeft = css`left: calc(${titleWidth}px + calc(${menuMargin}px * 2));`;
 const aboutRight = css`left: calc(100% - calc(${aboutWidth}px + ${menuMargin}px));`;
-const aboutLeft = css`left: calc(${titleWidth}px + ${projWidth}px + calc(${menuMargin}px * 3));`;
+const aboutCenter = css`left: calc(50% - ${aboutWidth}px / 2);`;
 
 const AppHomePageMenu = () => {
   const [isSticky, setStickiness] = useState(false);
@@ -83,23 +85,47 @@ const AppHomePageMenu = () => {
   const [projPos, setProjPos] = useState(projRight);
   const [aboutPos, setAboutPos] = useState(aboutRight);
   const ref = useRef({});
+
   const handleScroll = () => {
     if (ref.current) {
       const menuPos = ref.current.getBoundingClientRect().top;
+      const titleText = document.getElementById('TitleText');
+      let titleTextHeight;
+      if (titleText) {
+        titleTextHeight = getElementYCoordinate(titleText) + titleText.offsetHeight;
+      }
+      const projectsSection = document.getElementById('projects');
+      let projectsSectionHeight;
+      if (projectsSection) {
+        projectsSectionHeight = getElementYCoordinate(projectsSection);
+      }
+      const aboutSection = document.getElementById('about');
+      let aboutSectionHeight;
+      if (aboutSection) {
+        aboutSectionHeight = getElementYCoordinate(aboutSection);
+      }
+
       setStickiness(menuPos < 0);
-      if (menuPos >= -185) {
+      if (menuPos - 72 >= -1 * titleTextHeight) {
         setTitlePos(titleInvisible);
         setProjPos(projRight);
+        setAboutPos(aboutRight);
       }
-      else if (menuPos - 72 >= -1 * window.innerHeight) {
+      else if (!projectsSectionHeight || menuPos - 72 >= -1 * projectsSectionHeight) {
         setTitlePos(titleCenter);
         setProjPos(projRight);
+        setAboutPos(aboutRight);
+      }
+      else if (!aboutSection || menuPos - 72 >= -1 * aboutSectionHeight) {
+        setTitlePos(titleLeft);
+        setProjPos(projCenter);
+        setAboutPos(aboutRight);
       }
       else {
         setTitlePos(titleLeft);
-        setProjPos(projCenter);
+        setProjPos(projLeft);
+        setAboutPos(aboutCenter);
       }
-      // setAboutPos(menuPos < 0 ? aboutLeft : aboutRight);
     }
   };
   useEffect(() => {
