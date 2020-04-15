@@ -54,6 +54,12 @@ const MenuHashLink = styled(NavHashLink)`
   }
 `;
 
+const scrollWithOffset = (el) => {
+  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+  const yOffset = -71;
+  window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+};
+
 const titleWidth = 142.19;
 const projWidth = 84.56;
 const aboutWidth = 62.5;
@@ -114,12 +120,14 @@ const AppHomePageMenu = () => {
         <MenuHashLink
             smooth
             pos={projPos}
+            scroll={scrollWithOffset}
             to={Routes.PORTFOLIO}>
           projects
         </MenuHashLink>
         <MenuHashLink
             smooth
             pos={aboutPos}
+            scroll={scrollWithOffset}
             to={Routes.ABOUT}>
           about
         </MenuHashLink>
