@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { COLORS, NEUTRALS } from '../../core/styles/Colors';
 
 /* styled components */
 const Content = styled.div`
@@ -30,6 +32,36 @@ const DescriptionText = styled.div`
   margin: 30px 0px;
 `;
 
+const buttonStyles = css`
+  background-color: ${COLORS.ACCENT_COLOR};
+  border-radius: 15px;
+  border: none;
+  color: ${NEUTRALS.LIGHT_TEXT}
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  outline: none;
+  padding: 10px 15px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: ${COLORS.ACCENT_COLOR_1};
+  }
+
+  &:active {
+    background-color: ${COLORS.ACCENT_COLOR_2};
+  }
+`;
+
+const ExternalLinkButton = styled.a`
+  ${buttonStyles}
+`;
+
+const InternalLinkButton = styled(NavLink)`
+  ${buttonStyles}
+`;
+
 const Image = styled.div`
   background-color: transparent;
   background-image: url(${(props) => (props.image)});
@@ -47,14 +79,17 @@ type Props = {
 };
 
 /* react component */
-function ProjectSection({ section } :Props) {
+const ProjectSection = ({ section } :Props) => {
   const {
-    header,
+    buttonText,
     description,
+    external,
+    header,
     image,
-    imageOnLeft,
     imageHeight,
+    imageOnLeft,
     imageWidth,
+    link,
     shadow,
   } = section;
   const textContainer = (
@@ -65,13 +100,22 @@ function ProjectSection({ section } :Props) {
       <DescriptionText>
         { description }
       </DescriptionText>
+      { buttonText && (
+        external
+          ? (
+            <ExternalLinkButton
+                href={link}
+                rel="noreferrer noopener"
+                target="_blank">
+              { buttonText }
+            </ExternalLinkButton>
+          )
+          : <InternalLinkButton to={link}>{ buttonText }</InternalLinkButton>
+      )}
     </TextContainer>
   );
-  let content;
-  if (!image) {
-    content = textContainer;
-  }
-  else {
+  let content = textContainer;
+  if (image) {
     const imageComponent = (
       <Image
           image={image}
@@ -79,28 +123,23 @@ function ProjectSection({ section } :Props) {
           imageWidth={imageWidth}
           shadow={shadow} />
     );
-    if (imageOnLeft) {
-      content = (
-        <>
-          { imageComponent }
-          { textContainer }
-        </>
-      );
-    }
-    else {
-      content = (
-        <>
-          { textContainer }
-          { imageComponent }
-        </>
-      );
-    }
+    content = imageOnLeft ? (
+      <>
+        { imageComponent }
+        { textContainer }
+      </>
+    ) : (
+      <>
+        { textContainer }
+        { imageComponent }
+      </>
+    );
   }
   return (
     <Content>
       { content }
     </Content>
   );
-}
+};
 
 export default ProjectSection;

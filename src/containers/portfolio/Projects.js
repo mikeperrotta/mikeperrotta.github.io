@@ -12,13 +12,13 @@ const shadow = 'drop-shadow(2px 8px 6px rgba(0, 0, 0, 0.25))';
 const PROJECTS :Object[] = [
   {
     name: 'Meditation Article',
+    buttonText: 'Read my article',
     image: MeditationArticleImage,
     imageOnLeft: true,
     header: 'Shaping Your Meditation Through Brain Science',
     description: `As a meditator and a neuroscientist,
-    I’m curious about how clearing your mind
-    changes your brain. I wrote an article
-    about this, published here.`,
+    I’m curious about how clearing your
+    mind changes your brain. `,
     bgColor: NEUTRALS.OFF_WHITE_BACKGROUND,
     link: Routes.MEDITATION_ARTICLE,
     external: true,
@@ -28,11 +28,12 @@ const PROJECTS :Object[] = [
     name: 'Neosensory',
     image: NeosensoryImage,
     imageOnLeft: false,
+    buttonText: 'Check it out',
     header: 'Neosensory',
     description: `I’m a scientist at Neosensory, where
     we create hardware devices that give people
     new senses. Check out some of the projects
-    I’ve helped build and the research I’ve done.`,
+    I’ve helped build.`,
     bgColor: NEUTRALS.LIGHT_BACKGROUND,
     link: Routes.NEOSENSORY_EXTERNAL,
     external: true,
@@ -42,6 +43,7 @@ const PROJECTS :Object[] = [
     name: 'Empire App',
     image: EmpireAppImage,
     imageOnLeft: true,
+    buttonText: 'Learn more',
     header: 'Party Game App',
     description: `I made an app for a party game I love to
     play, so that no one has to sit out to

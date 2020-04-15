@@ -1,4 +1,7 @@
 const COLORS = {
+  ACCENT_COLOR: '#49a3f2',
+  ACCENT_COLOR_1: '#319af7',
+  ACCENT_COLOR_2: '#1785e6',
   EMPIRE_BLUE: '#4AA6F5',
 };
 
