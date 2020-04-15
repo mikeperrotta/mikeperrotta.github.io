@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import AboutImage from '../../assets/images/about/headshot.jpg';
-import BuchImage from '../../assets/images/about/stand-in-buch.jpg';
 import PageSection from '../../components/layout/PageSection';
 import { NEUTRALS } from '../../core/styles/Colors';
 
@@ -27,12 +26,6 @@ const faceImageStyles = {
   width: '414px',
   maxWidth: '80%',
   borderRadius: '50%',
-};
-
-const buchImageStyles = {
-  margin: '60px',
-  width: '275px',
-  maxWidth: '80%',
 };
 
 const AboutText = (
@@ -71,7 +64,6 @@ const AboutSection = () => (
     <Content>
       <img src={AboutImage} alt="" style={faceImageStyles} />
       {AboutText}
-      <img src={BuchImage} alt="" style={buchImageStyles} />
     </Content>
   </PageSection>
 );
