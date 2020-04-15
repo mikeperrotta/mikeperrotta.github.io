@@ -30,7 +30,7 @@ const faceImageStyles = {
 
 const AboutText = (
   <TextContainer>
-    <p>I am a scientist, writer, and coder.</p>
+    <p>I am a scientist, writer, and developer.</p>
     <p>
       As a neuroscientist, I want to understand
       how people think and how their brains work.
@@ -40,7 +40,7 @@ const AboutText = (
       knowledge and stories with people.
     </p>
     <p>
-      As a coder, I want to create products that
+      As a developer, I want to create products that
       people can use, tools that improve lives.
     </p>
     <p>
