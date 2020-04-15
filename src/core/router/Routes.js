@@ -1,5 +1,5 @@
 export const ROOT = '/home';
-export const HOME = `${ROOT}#home`;
+export const HOME = `${ROOT}#top`;
 export const PORTFOLIO = `${ROOT}#projects`;
 export const ABOUT_PAGE = '/about';
 export const ABOUT = `${ABOUT_PAGE}#about`;

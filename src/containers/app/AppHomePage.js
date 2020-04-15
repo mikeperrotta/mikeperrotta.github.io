@@ -6,6 +6,7 @@ import Footer from '../../components/content/Footer';
 
 const AppHomePage = () => (
   <>
+    <div id="top" />
     <IntroSection />
     <PortfolioSection />
     <Footer />
