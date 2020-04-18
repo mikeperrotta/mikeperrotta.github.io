@@ -10,7 +10,6 @@ const Header = styled.div`
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
-  justify-content: flex-start;
   margin-top: 30px;
 
   @media only screen and (min-width: 768px) {

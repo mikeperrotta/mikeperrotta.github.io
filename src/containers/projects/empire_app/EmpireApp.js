@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import EMPIRE_APP from './EmpireAppSections';
 import EmpireAppHeader from '../../../assets/images/empire-app/empire_app_header2x.png';
 import Footer from '../../../components/content/Footer';
-import Menu from '../../../components/content/Menu';
+import AppHomePageMenu from '../../app/AppHomePageMenu';
 import PageSection from '../../../components/layout/PageSection';
 import ProjectSection from '../../../components/content/ProjectSection';
 import ScrollToTopOnMount from '../../../core/router/RouterHelpers';
@@ -35,10 +35,10 @@ const EmpireApp = () => (
     <PageSection
         bgColor={COLORS.EMPIRE_BLUE}
         bgImage={EmpireAppHeader}
-        bgImagePosition="0% 28%"
+        bgImagePosition="0 72px"
         bgSize="contain"
         height="75%">
-      <Menu />
+      <AppHomePageMenu projectMenu />
       <Content />
     </PageSection>
     {

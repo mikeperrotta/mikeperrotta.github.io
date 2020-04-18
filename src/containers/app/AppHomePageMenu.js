@@ -8,66 +8,124 @@ import { NEUTRALS } from '../../core/styles/Colors';
 import * as Routes from '../../core/router/Routes';
 
 const StickyWrapper = styled.div`
-  align-items: center;
-  bottom: 0;
-  display: flex;
-  height: ${(props) => props.height}px;
-  justify-content: center;
+  top: 0;
   position: absolute;
   width: 100%;
 `;
 
 const Menu = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  height: 72px;
+  padding: 0 32px;
   position: fixed;
   width: 100%;
   z-index: 200;
 
   ${(props) => (props.isSticky ? css`
     background-color: ${NEUTRALS.LIGHT_BACKGROUND};
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     ` : `
     background-color: ${NEUTRALS.LIGHT_BACKGROUND};
-    bottom: 0;
-    position: absolute;
     box-shadow: none;
+    position: absolute;
+    top: 0;
     `
   )}
 `;
 
-const getLinkStyles = () => (
-  css`
-    color: ${NEUTRALS.DARK_TEXT};
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: 30px;
-    margin: 12px 80px;
-    text-decoration: none;
-
-   &:hover {
-     color: ${NEUTRALS.BLACK};
-     cursor: pointer;
-   }
-  `
-);
-
 const MenuHashLink = styled(NavHashLink)`
-  ${getLinkStyles}
+  color: ${NEUTRALS.DARK_TEXT};
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 30px;
+  opacity: 1;
+  position: absolute;
+  text-decoration: none;
+  top: calc(50% - 36px / 2);
+  transition: left 0.3s, opacity 0.3s;
+
+  ${(props) => props.pos};
+
+  &:hover {
+   color: ${NEUTRALS.BLACK};
+   cursor: pointer;
+  }
 `;
+
+const titleWidth = 142.19;
+const projWidth = 84.56;
+const aboutWidth = 62.5;
+const menuMargin = 48;
+
+const titleCenter = css`left: calc(50% - ${titleWidth}px / 2);`;
+const titleInvisible = css`
+  opacity: 0;
+  ${titleCenter}
+`;
+const titleLeft = css`left: calc(${menuMargin}px);`;
+const projRight = css`left: calc(100% - calc(${projWidth}px + ${aboutWidth}px + calc(${menuMargin}px * 2)));`;
+const projCenter = css`left: calc(50% - ${projWidth}px / 2);`;
+const projLeft = css`left: calc(${titleWidth}px + calc(${menuMargin}px * 2));`;
+const aboutRight = css`left: calc(100% - calc(${aboutWidth}px + ${menuMargin}px));`;
+const aboutCenter = css`left: calc(50% - ${aboutWidth}px / 2);`;
+
+const getElementYCoordinate = (el) => el.getBoundingClientRect().top + window.pageYOffset;
+
+const scrollWithOffset = (el) => {
+  const yCoordinate = getElementYCoordinate(el);
+  const yOffset = -71;
+  window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+};
 
 const AppHomePageMenu = () => {
   const [isSticky, setStickiness] = useState(false);
-  const [menuHeight, setMenuHeight] = useState(80);
+  const [titlePos, setTitlePos] = useState(titleInvisible);
+  const [projPos, setProjPos] = useState(projRight);
+  const [aboutPos, setAboutPos] = useState(aboutRight);
   const ref = useRef({});
-  const menuRef = useRef({});
+
   const handleScroll = () => {
     if (ref.current) {
-      setStickiness(ref.current.getBoundingClientRect().top <= 0);
+      const menuPos = ref.current.getBoundingClientRect().top;
+      const titleText = document.getElementById('TitleText');
+      let titleTextHeight;
+      if (titleText) {
+        titleTextHeight = getElementYCoordinate(titleText) + titleText.offsetHeight;
+      }
+      const projectsSection = document.getElementById('projects');
+      let projectsSectionHeight;
+      if (projectsSection) {
+        projectsSectionHeight = getElementYCoordinate(projectsSection);
+      }
+      const aboutSection = document.getElementById('about');
+      let aboutSectionHeight;
+      if (aboutSection) {
+        aboutSectionHeight = getElementYCoordinate(aboutSection);
+      }
+
+      setStickiness(menuPos < 0);
+      if (menuPos - 72 >= -1 * titleTextHeight) {
+        setTitlePos(titleInvisible);
+        setProjPos(projRight);
+        setAboutPos(aboutRight);
+      }
+      else if (!projectsSectionHeight || menuPos - 72 >= -1 * projectsSectionHeight) {
+        setTitlePos(titleCenter);
+        setProjPos(projRight);
+        setAboutPos(aboutRight);
+      }
+      else if (!aboutSection || menuPos - 72 >= -1 * aboutSectionHeight) {
+        setTitlePos(titleLeft);
+        setProjPos(projCenter);
+        setAboutPos(aboutRight);
+      }
+      else {
+        setTitlePos(titleLeft);
+        setProjPos(projLeft);
+        setAboutPos(aboutCenter);
+      }
     }
   };
   useEffect(() => {
@@ -76,19 +134,25 @@ const AppHomePageMenu = () => {
       window.removeEventListener('scroll', () => handleScroll);
     };
   }, []);
-  useEffect(() => {
-    setMenuHeight(menuRef.current.offsetHeight);
-  }, []);
-
   return (
-    <StickyWrapper ref={ref} height={menuHeight}>
-      <Menu isSticky={isSticky} ref={menuRef}>
+    <StickyWrapper ref={ref}>
+      <Menu isSticky={isSticky}>
         <MenuHashLink
+            pos={titlePos}
+            smooth
+            to={Routes.HOME}>
+          mike perrotta
+        </MenuHashLink>
+        <MenuHashLink
+            pos={projPos}
+            scroll={scrollWithOffset}
             smooth
             to={Routes.PORTFOLIO}>
           projects
         </MenuHashLink>
         <MenuHashLink
+            pos={aboutPos}
+            scroll={scrollWithOffset}
             smooth
             to={Routes.ABOUT}>
           about
