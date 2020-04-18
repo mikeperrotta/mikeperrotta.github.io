@@ -17,6 +17,14 @@ const Content = styled.div`
   margin: 170px auto 0px auto;
   max-width: 100%;
   text-align: center;
+
+  @media only screen and (max-height: 660px) {
+    margin: 90px auto 0px auto;
+  }
+
+  @media only screen and (max-height: 465px) {
+    margin: 60px auto 0px auto;
+  }
 `;
 
 const TitleText = styled.div`
