@@ -32,15 +32,24 @@ const AboutText = (
   <TextContainer>
     <p>I am a scientist, writer, and developer.</p>
     <p>
-      As a neuroscientist, I want to understand
+      As a
+      {' '}
+      <span style={{ fontWeight: '500' }}>neuroscientist</span>
+      , I want to understand
       how people think and how their brains work.
     </p>
     <p>
-      As a writer, I want to share
+      As a
+      {' '}
+      <span style={{ fontWeight: '500' }}>writer</span>
+      , I want to share
       knowledge and stories with people.
     </p>
     <p>
-      As a developer, I want to create products that
+      As a
+      {' '}
+      <span style={{ fontWeight: '500' }}>developer</span>
+      , I want to create products that
       people can use, tools that improve lives.
     </p>
     <p>
