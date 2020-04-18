@@ -35,7 +35,7 @@ const applyBgStyles = ({
 // "min-width" because this container needs to stretch to 100% of the width of the window
 export const PageSectionOuterWrapper = styled.section`
   display: flex;
-  height: ${(props) => (props.height)}
+  height: ${(props) => (props.height)};
   justify-content: center;
   overflow: hidden;
   position: relative;
