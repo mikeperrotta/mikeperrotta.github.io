@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import EMPIRE_APP from './EmpireAppSections';
@@ -29,28 +29,48 @@ const Content = styled.div`
 `;
 
 /* react component */
-const EmpireApp = () => (
-  <>
-    <ScrollToTopOnMount />
-    <PageSection
-        bgColor={COLORS.EMPIRE_BLUE}
-        bgImage={EmpireAppHeader}
-        bgImagePosition="0 72px"
-        bgSize="contain"
-        height="75%">
-      <AppHomePageMenu projectMenu />
-      <Content />
-    </PageSection>
-    {
-      EMPIRE_APP.map((section) => (
-        <PageSection bgColor={section.bgColor} height="680px" key={section.name}>
-          <ProjectSection
-              section={section} />
-        </PageSection>
-      ))
-    }
-    <Footer />
-  </>
-);
+const EmpireApp = () => {
+
+  const getHeightFromWidth = (fromWidth) => {
+    return fromWidth / 2.5 + 75;
+  };
+
+  const [height, setHeight] = useState(getHeightFromWidth(window.innerWidth));
+
+  const handleResize = () => {
+    setHeight(getHeightFromWidth(window.innerWidth));
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', () => handleResize);
+    };
+  }, []);
+
+  return (
+    <>
+      <ScrollToTopOnMount />
+      <PageSection
+          bgColor={COLORS.EMPIRE_BLUE}
+          bgImage={EmpireAppHeader}
+          bgSize="contain"
+          height={`${height}px`}
+          top="36px">
+        <AppHomePageMenu projectMenu />
+        <Content />
+      </PageSection>
+      {
+        EMPIRE_APP.map((section) => (
+          <PageSection bgColor={section.bgColor} height="680px" key={section.name}>
+            <ProjectSection
+                section={section} />
+          </PageSection>
+        ))
+      }
+      <Footer />
+    </>
+  );
+};
 
 export default EmpireApp;

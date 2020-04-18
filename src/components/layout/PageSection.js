@@ -60,6 +60,7 @@ const PageSectionBackgroundWrapper = styled.div`
   position: absolute;
   width: 100%;
   ${(props) => applyBgStyles(props)}
+  top: ${(props) => props.top};
 `;
 
 type Props = {
@@ -71,6 +72,7 @@ type Props = {
   children :Node;
   flipHorizontal ? :boolean;
   height ? :string;
+  top ? :string;
 };
 
 const PageSection = ({
@@ -81,7 +83,8 @@ const PageSection = ({
   height,
   blur,
   flipHorizontal,
-  children
+  children,
+  top
 } :Props) => (
   <PageSectionOuterWrapper height={height}>
     <PageSectionBackgroundWrapper
@@ -90,7 +93,8 @@ const PageSection = ({
         bgSize={bgSize}
         bgImagePosition={bgImagePosition}
         blur={blur}
-        flipHorizontal={flipHorizontal} />
+        flipHorizontal={flipHorizontal}
+        top={top} />
     <PageSectionInnerWrapper>
       { children }
     </PageSectionInnerWrapper>
@@ -105,6 +109,7 @@ PageSection.defaultProps = {
   blur: 0,
   flipHorizontal: false,
   height: 'auto',
+  top: '0px',
 };
 
 export default PageSection;
