@@ -95,14 +95,21 @@ type Props = {
   projectMenu :boolean;
 };
 
+const smallMenuSize = 500;
+const staticMenuSize = 768;
+
 const AppHomePageMenu = ({ projectMenu } :Props) => {
   const [isSticky, setStickiness] = useState(false);
-  const [titleProps, setTitleProps] = useState(projectMenu ? titleCenter : titleInvisible);
+  let defaultTitle = projectMenu ? titleCenter : titleInvisible;
+  defaultTitle = window.innerWidth < staticMenuSize ? titleLeft : defaultTitle;
+  const [titleProps, setTitleProps] = useState(defaultTitle);
   const [projProps, setProjProps] = useState(projRight);
   const [aboutProps, setAboutProps] = useState(aboutRight);
+  const [smallMenu, setSmallMenu] = useState(window.innerWidth < smallMenuSize);
   const ref = useRef({});
 
-  const handleScroll = () => {
+  const updateMenuProps = () => {
+    setSmallMenu(window.innerWidth < smallMenuSize);
     if (ref.current) {
       const menuPos = ref.current.getBoundingClientRect().top;
       const titleText = document.getElementById('TitleText');
@@ -122,6 +129,14 @@ const AppHomePageMenu = ({ projectMenu } :Props) => {
       }
 
       setStickiness(menuPos < 0);
+
+      if (window.innerWidth < staticMenuSize) {
+        setTitleProps(titleLeft);
+        setProjProps(projRight);
+        setAboutProps(aboutRight);
+        return;
+      }
+
       if (menuPos - 72 >= -1 * titleTextHeight) {
         setTitleProps(titleInvisible);
         setProjProps(projRight);
@@ -144,12 +159,18 @@ const AppHomePageMenu = ({ projectMenu } :Props) => {
       }
     }
   };
+
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', updateMenuProps);
+    window.addEventListener('resize', updateMenuProps);
     return () => {
-      window.removeEventListener('scroll', () => handleScroll);
+      window.removeEventListener('scroll', () => updateMenuProps);
+      window.removeEventListener('resize', () => updateMenuProps);
     };
   }, []);
+
+  const homeButtonText = smallMenu ? 'mp' : 'mike perrotta';
+
   return (
     <StickyWrapper ref={ref}>
       <Menu isSticky={isSticky}>
@@ -157,7 +178,7 @@ const AppHomePageMenu = ({ projectMenu } :Props) => {
             props={titleProps}
             smooth
             to={Routes.HOME}>
-          mike perrotta
+          {homeButtonText}
         </MenuHashLink>
         <MenuHashLink
             props={projProps}
