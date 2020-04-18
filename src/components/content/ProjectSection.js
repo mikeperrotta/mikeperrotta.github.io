@@ -19,6 +19,7 @@ const Content = styled.div`
 
   @media only screen and (max-width: 767px) {
     flex-direction: column;
+    padding: 50px 0;
   }
 `;
 
