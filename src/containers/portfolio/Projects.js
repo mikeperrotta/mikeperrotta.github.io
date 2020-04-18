@@ -2,9 +2,9 @@
 
 import { css } from 'styled-components';
 
-import MeditationArticleImage from '../../assets/images/meditation-article-cover-image-with-text.png';
-import NeosensoryImage from '../../assets/images/neosensory-image.png';
-import EmpireAppImage from '../../assets/images/empire-app-image.png';
+import MeditationArticleImage from '../../assets/images/meditation-article/meditation-article-cover-image-with-text.png';
+import NeosensoryImage from '../../assets/images/neosensory/neosensory-image.png';
+import EmpireAppImage from '../../assets/images/empire-app/empire-app-image.png';
 import { NEUTRALS } from '../../core/styles/Colors';
 
 import * as Routes from '../../core/router/Routes';
