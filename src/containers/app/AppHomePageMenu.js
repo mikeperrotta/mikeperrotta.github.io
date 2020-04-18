@@ -91,9 +91,13 @@ const scrollWithOffset = (el) => {
   window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
 };
 
-const AppHomePageMenu = () => {
+type Props = {
+  projectMenu :boolean;
+};
+
+const AppHomePageMenu = ({ projectMenu } :Props) => {
   const [isSticky, setStickiness] = useState(false);
-  const [titleProps, setTitleProps] = useState(titleInvisible);
+  const [titleProps, setTitleProps] = useState(projectMenu ? titleCenter : titleInvisible);
   const [projProps, setProjProps] = useState(projRight);
   const [aboutProps, setAboutProps] = useState(aboutRight);
   const ref = useRef({});
