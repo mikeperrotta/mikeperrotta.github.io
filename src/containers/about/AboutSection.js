@@ -50,7 +50,7 @@ const AboutText = (
       {' '}
       <span style={{ fontWeight: '500' }}>developer</span>
       , I want to create products that
-      people can use, tools that improve lives.
+      people can use and tools that improve lives.
     </p>
     <p>
       I currently get to practice all three skills
@@ -59,7 +59,7 @@ const AboutText = (
     </p>
     <p>
       I am always looking for new projects
-      that help me understand people, share
+      that allow me to work with people, share
       with people, and create for people.
     </p>
     <p>I also happen to brew a mean keg of kombucha.</p>
