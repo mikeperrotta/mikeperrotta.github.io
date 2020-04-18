@@ -1,9 +1,13 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 
+import { NavLink } from 'react-router-dom';
 import AboutImage from '../../assets/images/about/headshot.jpg';
 import PageSection from '../../components/layout/PageSection';
-import { NEUTRALS } from '../../core/styles/Colors';
+import { COLORS, NEUTRALS } from '../../core/styles/Colors';
+import * as Routes from '../../core/router/Routes';
 
 /* styled components */
 const Content = styled.div`
@@ -28,6 +32,11 @@ const FaceImage = styled.img`
   width: 414px;
 `;
 
+const InternalLink = styled(NavLink)`
+  color: ${COLORS.ACCENT_COLOR};
+  text-decoration: none;
+`;
+
 const AboutText = (
   <TextContainer>
     <p>I am a scientist, writer, and developer.</p>
@@ -50,7 +59,7 @@ const AboutText = (
       {' '}
       <span style={{ fontWeight: '500' }}>developer</span>
       , I want to create products that
-      people can use, tools that improve lives.
+      people can use and tools that improve lives.
     </p>
     <p>
       I currently get to practice all three skills
@@ -61,6 +70,9 @@ const AboutText = (
       I am always looking for new projects
       that help me understand people, share
       with people, and create for people.
+      {' '}
+      <InternalLink to={Routes.RESUME}>Check out my resume</InternalLink>
+      .
     </p>
     <p>I also happen to brew a mean keg of kombucha.</p>
   </TextContainer>
