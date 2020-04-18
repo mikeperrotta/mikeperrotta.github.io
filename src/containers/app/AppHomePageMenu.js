@@ -44,9 +44,9 @@ const MenuHashLink = styled(NavHashLink)`
   position: absolute;
   text-decoration: none;
   top: calc(50% - 36px / 2);
-  transition: left 0.3s, opacity 0.3s;
+  transition: left 0.3s, opacity 0.3s, font-weight 0.1s, font-size 0.1s;
 
-  ${(props) => props.pos};
+  ${(props) => props.props};
 
   &:hover {
    color: ${NEUTRALS.BLACK};
@@ -59,17 +59,29 @@ const projWidth = 84.56;
 const aboutWidth = 62.5;
 const menuMargin = 48;
 
-const titleCenter = css`left: calc(50% - ${titleWidth}px / 2);`;
+const titleCenter = css`
+  left: calc(50% - ${titleWidth}px / 2);
+  font-weight: 300;
+  font-size: 28px;
+`;
 const titleInvisible = css`
   opacity: 0;
   ${titleCenter}
 `;
 const titleLeft = css`left: calc(${menuMargin}px);`;
 const projRight = css`left: calc(100% - calc(${projWidth}px + ${aboutWidth}px + calc(${menuMargin}px * 2)));`;
-const projCenter = css`left: calc(50% - ${projWidth}px / 2);`;
+const projCenter = css`
+  left: calc(50% - ${projWidth}px / 2);
+  font-weight: 300;
+  font-size: 28px;
+`;
 const projLeft = css`left: calc(${titleWidth}px + calc(${menuMargin}px * 2));`;
 const aboutRight = css`left: calc(100% - calc(${aboutWidth}px + ${menuMargin}px));`;
-const aboutCenter = css`left: calc(50% - ${aboutWidth}px / 2);`;
+const aboutCenter = css`
+  left: calc(50% - ${aboutWidth}px / 2);
+  font-weight: 300;
+  font-size: 28px;
+`;
 
 const getElementYCoordinate = (el) => el.getBoundingClientRect().top + window.pageYOffset;
 
@@ -81,9 +93,9 @@ const scrollWithOffset = (el) => {
 
 const AppHomePageMenu = () => {
   const [isSticky, setStickiness] = useState(false);
-  const [titlePos, setTitlePos] = useState(titleInvisible);
-  const [projPos, setProjPos] = useState(projRight);
-  const [aboutPos, setAboutPos] = useState(aboutRight);
+  const [titleProps, setTitleProps] = useState(titleInvisible);
+  const [projProps, setProjProps] = useState(projRight);
+  const [aboutProps, setAboutProps] = useState(aboutRight);
   const ref = useRef({});
 
   const handleScroll = () => {
@@ -107,24 +119,24 @@ const AppHomePageMenu = () => {
 
       setStickiness(menuPos < 0);
       if (menuPos - 72 >= -1 * titleTextHeight) {
-        setTitlePos(titleInvisible);
-        setProjPos(projRight);
-        setAboutPos(aboutRight);
+        setTitleProps(titleInvisible);
+        setProjProps(projRight);
+        setAboutProps(aboutRight);
       }
       else if (!projectsSectionHeight || menuPos - 72 >= -1 * projectsSectionHeight) {
-        setTitlePos(titleCenter);
-        setProjPos(projRight);
-        setAboutPos(aboutRight);
+        setTitleProps(titleCenter);
+        setProjProps(projRight);
+        setAboutProps(aboutRight);
       }
       else if (!aboutSection || menuPos - 72 >= -1 * aboutSectionHeight) {
-        setTitlePos(titleLeft);
-        setProjPos(projCenter);
-        setAboutPos(aboutRight);
+        setTitleProps(titleLeft);
+        setProjProps(projCenter);
+        setAboutProps(aboutRight);
       }
       else {
-        setTitlePos(titleLeft);
-        setProjPos(projLeft);
-        setAboutPos(aboutCenter);
+        setTitleProps(titleLeft);
+        setProjProps(projLeft);
+        setAboutProps(aboutCenter);
       }
     }
   };
@@ -138,20 +150,20 @@ const AppHomePageMenu = () => {
     <StickyWrapper ref={ref}>
       <Menu isSticky={isSticky}>
         <MenuHashLink
-            pos={titlePos}
+            props={titleProps}
             smooth
             to={Routes.HOME}>
           mike perrotta
         </MenuHashLink>
         <MenuHashLink
-            pos={projPos}
+            props={projProps}
             scroll={scrollWithOffset}
             smooth
             to={Routes.PORTFOLIO}>
           projects
         </MenuHashLink>
         <MenuHashLink
-            pos={aboutPos}
+            props={aboutProps}
             scroll={scrollWithOffset}
             smooth
             to={Routes.ABOUT}>
