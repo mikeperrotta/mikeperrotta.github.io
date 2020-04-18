@@ -1,5 +1,7 @@
 // @flow
 
+import { css } from 'styled-components';
+
 import MeditationArticleImage from '../../assets/images/meditation-article-cover-image-with-text.png';
 import NeosensoryImage from '../../assets/images/neosensory-image.png';
 import EmpireAppImage from '../../assets/images/empire-app-image.png';
@@ -7,7 +9,7 @@ import { NEUTRALS } from '../../core/styles/Colors';
 
 import * as Routes from '../../core/router/Routes';
 
-const shadow = 'drop-shadow(2px 8px 6px rgba(0, 0, 0, 0.25))';
+const shadow = css`drop-shadow(2px 8px 6px rgba(0, 0, 0, 0.25))`;
 
 const PROJECTS :Object[] = [
   {

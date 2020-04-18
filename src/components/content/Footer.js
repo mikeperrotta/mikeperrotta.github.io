@@ -9,7 +9,6 @@ const Content = styled.div`
   background-color: ${NEUTRALS.LIGHT_BACKGROUND};
   display: flex;
   height: 50px;
-  justify-content: flex-start;
 `;
 
 const Text = styled.div`

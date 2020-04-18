@@ -21,12 +21,12 @@ const TextContainer = styled.div`
   max-width: 500px;
 `;
 
-const faceImageStyles = {
-  borderRadius: '50%',
-  margin: '60px',
-  maxWidth: '80%',
-  width: '414px',
-};
+const FaceImage = styled.img`
+  border-radius: 50%;
+  margin: 60px;
+  max-width: 80%;
+  width: 414px;
+`;
 
 const AboutText = (
   <TextContainer>
@@ -62,7 +62,7 @@ const AboutSection = () => (
   <PageSection bgColor={NEUTRALS.LIGHT_BACKGROUND}>
     <div id="about" />
     <Content>
-      <img src={AboutImage} alt="" style={faceImageStyles} />
+      <FaceImage src={AboutImage} alt="" />
       {AboutText}
     </Content>
   </PageSection>

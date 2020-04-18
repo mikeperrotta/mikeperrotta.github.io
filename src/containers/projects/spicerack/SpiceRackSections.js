@@ -5,7 +5,7 @@ import { NEUTRALS } from '../../../core/styles/Colors';
 
 const SPICERACK :Object[] = [
   {
-    name: 'desk_section_1',
+    name: 'Intro',
     image: SpiceRackImage,
     imageOnLeft: true,
     header: 'Header',

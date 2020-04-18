@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { css } from 'styled-components';
 
 import AmplitudeImage from '../../../assets/images/empire-app/amplitude.png';
 import AppLogo from '../../../assets/images/empire-app/logo.png';
@@ -9,7 +10,7 @@ import XDDemo from '../../../assets/images/empire-app/xd-demo.png';
 import { COLORS, NEUTRALS } from '../../../core/styles/Colors';
 import * as Routes from '../../../core/router/Routes';
 
-const shadow = 'drop-shadow(2px 8px 6px rgba(0, 0, 0, 0.25))';
+const shadow = css`drop-shadow(2px 8px 6px rgba(0, 0, 0, 0.25))`;
 
 const EMPIRE_SECTIONS :Object[] = [
   {
@@ -25,7 +26,7 @@ const EMPIRE_SECTIONS :Object[] = [
     imageOnLeft: true,
     imageWidth: '25%',
     link: Routes.EMPIRE_APP_APP_STORE,
-    name: 'section_1',
+    name: 'Intro',
   },
   {
     bgColor: NEUTRALS.OFF_WHITE_BLUE,
@@ -35,7 +36,7 @@ const EMPIRE_SECTIONS :Object[] = [
     header: 'Design',
     image: XDDemo,
     imageOnLeft: false,
-    name: 'section_2',
+    name: 'Design',
     shadow,
   },
   {
@@ -47,7 +48,7 @@ const EMPIRE_SECTIONS :Object[] = [
     image: ExpoDemo,
     imageOnLeft: true,
     imageWidth: '35%',
-    name: 'section_3',
+    name: 'Expo',
     shadow,
   },
   {
@@ -74,7 +75,7 @@ const EMPIRE_SECTIONS :Object[] = [
     header: 'Analytics',
     image: AmplitudeImage,
     imageOnLeft: false,
-    name: 'section_4',
+    name: 'Amplitude',
     shadow,
   },
   {
@@ -88,7 +89,7 @@ const EMPIRE_SECTIONS :Object[] = [
     image: ArticleImage,
     imageOnLeft: true,
     link: Routes.EMPIRE_APP_TUTORIAL,
-    name: 'section_5',
+    name: 'Deploy',
     shadow,
   }
 ];
