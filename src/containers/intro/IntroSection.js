@@ -27,6 +27,14 @@ const TitleText = styled.div`
   font-weight: 200;
   padding: 0px 50px;
   text-align: center;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 64px;
+  }
+
+  @media only screen and (max-width: 375px) {
+    font-size: 54px;
+  }
 `;
 
 /* react component */
