@@ -49,10 +49,6 @@ export const PageSectionInnerWrapper = styled.div`
   flex-direction: column;
   position: relative;
   width: 100%;
-
-  @media only screen and (min-width: 768px) {
-    align-items: stretch;
-  }
 `;
 
 const PageSectionBackgroundWrapper = styled.div`
