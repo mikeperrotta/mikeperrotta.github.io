@@ -68,7 +68,7 @@ const AboutText = (
     </p>
     <p>
       I am always looking for new projects
-      that help me understand people, share
+      that allow me to work with people, share
       with people, and create for people.
       {' '}
       <InternalLink to={Routes.RESUME}>Check out my resume</InternalLink>
