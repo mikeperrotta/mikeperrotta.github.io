@@ -27,7 +27,6 @@ const Resume = () => {
   const [pdfWidth, setPdfWidth] = useState(getPdfWidth(window.innerWidth));
 
   const handleResize = () => {
-    console.log('handling resize');
     setPdfWidth(getPdfWidth(window.innerWidth));
   };
 
