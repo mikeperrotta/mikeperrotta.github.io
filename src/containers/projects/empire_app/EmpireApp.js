@@ -55,7 +55,7 @@ const EmpireApp = () => {
           bgSize="contain"
           height={`${height}px`}
           top="36px">
-        <AppHomePageMenu projectMenu />
+        <AppHomePageMenu isProjectMenu />
         <Content />
       </PageSection>
       {

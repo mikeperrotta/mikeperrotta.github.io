@@ -40,7 +40,7 @@ const Resume = () => {
   return (
     <>
       <ScrollToTopOnMount />
-      <AppHomePageMenu projectMenu />
+      <AppHomePageMenu isProjectMenu />
       <Content>
         <Document file={ResumePdf}>
           <div style={{ boxShadow: '0 5px 20px rgba(0, 0, 0, 0.2)' }}>
