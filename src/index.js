@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactGA from 'react-ga';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
@@ -33,6 +34,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const APP_ROOT_NODE = document.getElementById('app');
+
+ReactGA.initialize('UA-163997755-1');
 
 if (APP_ROOT_NODE) {
   ReactDOM.render(
