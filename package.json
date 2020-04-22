@@ -1,6 +1,6 @@
 {
   "name": "my-website",
-  "homepage": "https://mikeperrotta.github.io",
+  "homepage": "https://mperrotta.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,7 +28,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "flow": "flow"

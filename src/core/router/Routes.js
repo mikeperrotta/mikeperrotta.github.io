@@ -1,5 +1,6 @@
-export const ROOT = '/home';
-export const HOME = `${ROOT}#top`;
+export const ROOT = '/';
+export const ERROR404 = '/404';
+export const HOME = `${ROOT}#home`;
 export const PORTFOLIO = `${ROOT}#projects`;
 export const ABOUT = `${ROOT}#about`;
 export const RESUME = '/resume';
