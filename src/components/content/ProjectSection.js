@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import { COLORS, NEUTRALS } from '../../core/styles/Colors';
 
 /* styled components */
@@ -63,7 +64,7 @@ const buttonStyles = css`
   }
 `;
 
-const ExternalLinkButton = styled.a`
+const ExternalLinkButton = styled(ReactGA.OutboundLink)`
   ${buttonStyles}
 `;
 
@@ -118,6 +119,7 @@ const ProjectSection = ({ section } :Props) => {
     imageOnLeft,
     imageWidth,
     link,
+    name,
     shadow,
   } = section;
   const textContainer = (
@@ -132,7 +134,8 @@ const ProjectSection = ({ section } :Props) => {
         external
           ? (
             <ExternalLinkButton
-                href={link}
+                to={link}
+                eventLabel={name}
                 rel="noreferrer noopener"
                 target="_blank">
               { buttonText }
