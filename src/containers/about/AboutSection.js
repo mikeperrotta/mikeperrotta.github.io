@@ -1,9 +1,13 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 
+import { NavLink } from 'react-router-dom';
 import AboutImage from '../../assets/images/about/headshot.jpg';
 import PageSection from '../../components/layout/PageSection';
-import { NEUTRALS } from '../../core/styles/Colors';
+import { COLORS, NEUTRALS } from '../../core/styles/Colors';
+import * as Routes from '../../core/router/Routes';
 
 /* styled components */
 const Content = styled.div`
@@ -26,6 +30,11 @@ const FaceImage = styled.img`
   margin: 60px;
   max-width: 80%;
   width: 414px;
+`;
+
+const InternalLink = styled(NavLink)`
+  color: ${COLORS.ACCENT_COLOR};
+  text-decoration: none;
 `;
 
 const AboutText = (
@@ -61,6 +70,9 @@ const AboutText = (
       I am always looking for new projects
       that allow me to work with people, share
       with people, and create for people.
+      {' '}
+      <InternalLink to={Routes.RESUME}>Check out my resume</InternalLink>
+      .
     </p>
     <p>I also happen to brew a mean keg of kombucha.</p>
   </TextContainer>
