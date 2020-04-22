@@ -20,8 +20,8 @@ const Content = styled.div`
 `;
 
 const HeaderText = styled.div`
-  font-size: 60px;
-  font-weight: 200;
+  font-size: 42px;
+  font-weight: 400;
 `;
 
 const ImageContainer = styled.div`
@@ -32,7 +32,7 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  margin: 60px;
+  margin: 40px;
   width: 900px;
   max-width: 80%;
 
@@ -59,7 +59,7 @@ const ErrorPage = () => (
   <>
     <AppHomePageMenu projectMenu />
     <Content>
-      <HeaderText>404!</HeaderText>
+      <HeaderText>404 Error: Page Not Found!</HeaderText>
       <ImageContainer>
         <Image src={ManyMikes} alt="" />
       </ImageContainer>
