@@ -31,9 +31,7 @@ const Content = styled.div`
 /* react component */
 const EmpireApp = () => {
 
-  const getHeightFromWidth = (fromWidth) => {
-    return fromWidth / 2.5 + 75;
-  };
+  const getHeightFromWidth = (fromWidth) => fromWidth / 2.5 + 75;
 
   const [height, setHeight] = useState(getHeightFromWidth(window.innerWidth));
 

@@ -7,8 +7,6 @@ export const ABOUT = `${ROOT}#about`;
 const PROJECTS_ROOT = '/projects';
 export const DESK = `${PROJECTS_ROOT}/desk`;
 export const EMPIRE_APP = `${PROJECTS_ROOT}/empire-app`;
-export const SHOE_RACK = `${PROJECTS_ROOT}/shoe-rack`;
-export const SPICE_RACK = `${PROJECTS_ROOT}/spice-rack`;
 
 // External links
 export const EMPIRE_APP_APP_STORE = 'https://apps.apple.com/us/app/empire-party-game/id1494647723';

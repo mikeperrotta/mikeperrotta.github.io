@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import AppHomePageMenu from '../app/AppHomePageMenu';
 import PageSection from '../../components/layout/PageSection';
-import KeyboardImage from '../../assets/images/white-keyboard.jpg';
+import KeyboardImage from '../../assets/images/intro/white-keyboard.jpg';
 
 import { NEUTRALS } from '../../core/styles/Colors';
 
