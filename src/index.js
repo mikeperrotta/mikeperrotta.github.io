@@ -35,7 +35,11 @@ const GlobalStyle = createGlobalStyle`
 
 const APP_ROOT_NODE = document.getElementById('app');
 
-ReactGA.initialize('UA-163997755-1');
+ReactGA.initialize('UA-163997755-1', {
+  gaOptions: {
+    siteSpeedSampleRate: 100
+  }
+});
 
 if (APP_ROOT_NODE) {
   ReactDOM.render(
