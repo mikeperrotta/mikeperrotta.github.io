@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { COLORS, NEUTRALS } from '../../core/styles/Colors';
@@ -16,11 +16,20 @@ const Content = styled.div`
   opacity: 0.9;
   text-align: center;
   width: 100%;
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    padding: 50px 0;
+  }
 `;
 
 const TextContainer = styled.div`
   flex-direction: column;
   width: 30%;
+
+  @media only screen and (max-width: 767px) {
+    width: 80%;
+  }
 `;
 
 const HeaderText = styled.div`
@@ -72,6 +81,11 @@ const Image = styled.div`
   height: ${(props) => (props.imageHeight || 'calc(100% - 120px)')};
   position: relative;
   width: ${(props) => (props.imageWidth || '30%')};
+
+  @media only screen and (max-width: 767px) {
+    height: 35%;
+    width: 60%;
+  }
 `;
 
 type Props = {
@@ -80,6 +94,20 @@ type Props = {
 
 /* react component */
 const ProjectSection = ({ section } :Props) => {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', () => handleResize);
+    };
+  }, []);
+
   const {
     buttonText,
     description,
@@ -123,7 +151,7 @@ const ProjectSection = ({ section } :Props) => {
           imageWidth={imageWidth}
           shadow={shadow} />
     );
-    content = imageOnLeft ? (
+    content = (imageOnLeft || isMobile) ? (
       <>
         { imageComponent }
         { textContainer }
