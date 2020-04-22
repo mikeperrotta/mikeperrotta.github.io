@@ -32,7 +32,7 @@ const EMPIRE_SECTIONS :Object[] = [
     bgColor: NEUTRALS.OFF_WHITE_BLUE,
     description: `I used Adobe XD to design the visuals and the navigation pathways.
     Creating the designs without letting myself get hung up on perfection
-    allowed me to start coding quickly and with efficiency.`,
+    allowed me to start coding quickly and efficiently.`,
     header: 'Design',
     image: XDDemo,
     imageOnLeft: false,
@@ -81,9 +81,9 @@ const EMPIRE_SECTIONS :Object[] = [
   {
     bgColor: NEUTRALS.WHITE,
     buttonText: 'Read the tutorial',
-    description: `I wrote a tutorial giving more detail to each step.
-    You can follow along with my steps in order to
-    develop an app of your own, from concept to App Store.`,
+    description: `I wrote a tutorial that details the steps I took.
+    You can follow along in order to develop a React Native app of your own, 
+    from concept to App Store.`,
     external: true,
     header: 'Tutorial',
     image: ArticleImage,

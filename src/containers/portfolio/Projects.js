@@ -29,7 +29,7 @@ const PROJECTS :Object[] = [
   },
   {
     bgColor: NEUTRALS.LIGHT_BACKGROUND,
-    buttonText: 'Learn more',
+    buttonText: 'See more',
     description: `I made an app for a party game I love to
     play, so that no one has to sit out to
     facilitate the game. I also wrote a tutorial on
