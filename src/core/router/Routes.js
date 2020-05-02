@@ -10,6 +10,9 @@ const PROJECTS_ROOT = '/projects';
 export const DESK = `${PROJECTS_ROOT}/desk`;
 export const EMPIRE_APP = `${PROJECTS_ROOT}/empire-app`;
 
+// Apps
+export const ACTIVITY_TRACKER = '/tracker';
+
 // External links
 export const EMPIRE_APP_APP_STORE = 'https://apps.apple.com/us/app/empire-party-game/id1494647723';
 export const EMPIRE_APP_TUTORIAL = 'https://blog.bitsrc.io/building-a-react-native-app-with-expo-530ddef0e1ab?source=friends_link&sk=e706805a23efbbe25c11d0e09964d12c';
