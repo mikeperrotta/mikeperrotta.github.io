@@ -23,7 +23,7 @@ const Text = styled.div`
 
 const Footer = () => (
   <Content>
-    <Text>© Mike Perrotta 2020. Made by me.</Text>
+    <Text>© Mike Perrotta 2020. Made by me with React.</Text>
   </Content>
 );
 
