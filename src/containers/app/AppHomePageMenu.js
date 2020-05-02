@@ -92,72 +92,127 @@ const scrollWithOffset = (el) => {
 };
 
 type Props = {
-  projectMenu :boolean;
+  isProjectMenu :boolean;
 };
 
 const smallMenuSize = 500;
 const staticMenuSize = 768;
 
-const AppHomePageMenu = ({ projectMenu } :Props) => {
-  const [isSticky, setStickiness] = useState(false);
-  let defaultTitle = projectMenu ? titleCenter : titleInvisible;
-  defaultTitle = window.innerWidth < staticMenuSize ? titleLeft : defaultTitle;
-  const [titleProps, setTitleProps] = useState(defaultTitle);
-  const [projProps, setProjProps] = useState(projRight);
-  const [aboutProps, setAboutProps] = useState(aboutRight);
-  const [smallMenu, setSmallMenu] = useState(window.innerWidth < smallMenuSize);
+const MenuStateStatic = 1;
+const MenuStateTop = 2;
+const MenuStateBelowTitle = 3;
+const MenuStateProjects = 4;
+const MenuStateAbout = 5;
+
+const getTitleProps = (menuState, isProjectMenu) => {
+  switch (menuState) {
+    case MenuStateStatic:
+      return titleLeft;
+    case MenuStateTop:
+      return isProjectMenu ? titleCenter : titleInvisible;
+    case MenuStateBelowTitle:
+      return titleCenter;
+    case MenuStateProjects:
+    case MenuStateAbout:
+      return titleLeft;
+    default:
+      return titleLeft;
+  }
+};
+
+const getProjProps = (menuState) => {
+  switch (menuState) {
+    case MenuStateStatic:
+    case MenuStateTop:
+    case MenuStateBelowTitle:
+      return projRight;
+    case MenuStateProjects:
+      return projCenter;
+    case MenuStateAbout:
+      return projLeft;
+    default:
+      return projRight;
+  }
+};
+
+const getAboutProps = (menuState) => {
+  switch (menuState) {
+    case MenuStateStatic:
+    case MenuStateTop:
+    case MenuStateBelowTitle:
+    case MenuStateProjects:
+      return aboutRight;
+    case MenuStateAbout:
+      return aboutCenter;
+    default:
+      return aboutRight;
+  }
+};
+
+const AppHomePageMenu = ({ isProjectMenu } :Props) => {
   const ref = useRef({});
 
-  const updateMenuProps = () => {
-    setSmallMenu(window.innerWidth < smallMenuSize);
-    if (ref.current) {
-      const menuPos = ref.current.getBoundingClientRect().top;
-      const titleText = document.getElementById('TitleText');
-      let titleTextHeight;
-      if (titleText) {
-        titleTextHeight = getElementYCoordinate(titleText) + titleText.offsetHeight;
-      }
-      const projectsSection = document.getElementById('projects');
-      let projectsSectionHeight;
-      if (projectsSection) {
-        projectsSectionHeight = getElementYCoordinate(projectsSection);
-      }
-      const aboutSection = document.getElementById('about');
-      let aboutSectionHeight;
-      if (aboutSection) {
-        aboutSectionHeight = getElementYCoordinate(aboutSection);
-      }
-
-      setStickiness(menuPos < 0);
-
-      if (window.innerWidth < staticMenuSize) {
-        setTitleProps(titleLeft);
-        setProjProps(projRight);
-        setAboutProps(aboutRight);
-        return;
-      }
-
-      if (menuPos - 72 >= -1 * titleTextHeight) {
-        setTitleProps(titleInvisible);
-        setProjProps(projRight);
-        setAboutProps(aboutRight);
-      }
-      else if (!projectsSectionHeight || menuPos - 72 >= -1 * projectsSectionHeight) {
-        setTitleProps(titleCenter);
-        setProjProps(projRight);
-        setAboutProps(aboutRight);
-      }
-      else if (!aboutSection || menuPos - 72 >= -1 * aboutSectionHeight) {
-        setTitleProps(titleLeft);
-        setProjProps(projCenter);
-        setAboutProps(aboutRight);
-      }
-      else {
-        setTitleProps(titleLeft);
-        setProjProps(projLeft);
-        setAboutProps(aboutCenter);
-      }
+  const getMenuSticky = () => {
+    if (!ref.current) {
+      return false;
     }
+    const menuPos = ref.current.getBoundingClientRect().top;
+    return menuPos < 0;
+  };
+
+  const getMenuState = () => {
+    if (!ref.current) {
+      return MenuStateTop;
+    }
+    const menuPos = ref.current.getBoundingClientRect().top;
+    const titleText = document.getElementById('TitleText');
+    let titleTextHeight;
+    if (titleText) {
+      titleTextHeight = getElementYCoordinate(titleText) + titleText.offsetHeight;
+    }
+    const projectsSection = document.getElementById('projects');
+    let projectsSectionHeight;
+    if (projectsSection) {
+      projectsSectionHeight = getElementYCoordinate(projectsSection);
+    }
+    const aboutSection = document.getElementById('about');
+    let aboutSectionHeight;
+    if (aboutSection) {
+      aboutSectionHeight = getElementYCoordinate(aboutSection);
+    }
+
+    if (window.innerWidth < staticMenuSize) {
+      return MenuStateStatic;
+    }
+    if (!titleTextHeight || menuPos - 72 >= -1 * titleTextHeight) {
+      return MenuStateTop;
+    }
+    if (!projectsSectionHeight || menuPos - 72 >= -1 * projectsSectionHeight) {
+      return MenuStateBelowTitle;
+    }
+    if (!aboutSection || menuPos - 72 >= -1 * aboutSectionHeight) {
+      return MenuStateProjects;
+    }
+    return MenuStateAbout;
+  };
+
+  const getIsSmallMenu = () => window.innerWidth < smallMenuSize;
+
+  const [isSticky, setStickiness] = useState(false);
+  let menuState = MenuStateTop;
+  const [titleProps, setTitleProps] = useState(getTitleProps(menuState, isProjectMenu));
+  const [projProps, setProjProps] = useState(getProjProps(menuState));
+  const [aboutProps, setAboutProps] = useState(getAboutProps(menuState));
+  const [smallMenu, setSmallMenu] = useState(getIsSmallMenu);
+
+  const updateMenuProps = () => {
+    setSmallMenu(getIsSmallMenu);
+    setStickiness(getMenuSticky);
+
+    menuState = getMenuState();
+    setTitleProps(getTitleProps(menuState, isProjectMenu));
+    setProjProps(getProjProps(menuState));
+    setAboutProps(getAboutProps(menuState));
   };
 
   useEffect(() => {
