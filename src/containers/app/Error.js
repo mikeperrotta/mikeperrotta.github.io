@@ -11,12 +11,11 @@ const Content = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: calc(100% - calc(72px + 50px));
+  height: calc(100% - 50px);
   justify-content: center;
-  margin-top: 72px;
   min-height: 500px;
   text-align: center;
-  padding: 0 30px;
+  padding: 72px 30px 0;
 `;
 
 const HeaderText = styled.div`
