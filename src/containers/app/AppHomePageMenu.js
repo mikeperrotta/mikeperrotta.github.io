@@ -32,6 +32,10 @@ const Menu = styled.div`
     top: 0;
     `
   )}
+
+  ${(props) => (props.alwaysShadow ? css`
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  ` : '')}
 `;
 
 const MenuHashLink = styled(NavHashLink)`
@@ -52,6 +56,21 @@ const MenuHashLink = styled(NavHashLink)`
    color: ${NEUTRALS.BLACK};
    cursor: pointer;
   }
+`;
+
+const MenuItem = styled.div`
+  color: ${NEUTRALS.DARK_TEXT};
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 30px;
+  opacity: 1;
+  position: absolute;
+  text-decoration: none;
+  top: calc(50% - 36px / 2);
+  transition: left 0.3s, opacity 0.3s, font-weight 0.1s, font-size 0.1s;
+
+  ${(props) => props.props};
 `;
 
 const titleWidth = 142.19;
@@ -93,6 +112,8 @@ const scrollWithOffset = (el) => {
 
 type Props = {
   isProjectMenu :boolean;
+  menuTitle? :string;
+  alwaysShadow :boolean;
 };
 
 const smallMenuSize = 500;
@@ -149,7 +170,7 @@ const getAboutProps = (menuState) => {
   }
 };
 
-const AppHomePageMenu = ({ isProjectMenu } :Props) => {
+const AppHomePageMenu = ({ isProjectMenu, menuTitle, alwaysShadow } :Props) => {
   const ref = useRef({});
 
   const getMenuSticky = () => {
@@ -181,6 +202,9 @@ const AppHomePageMenu = ({ isProjectMenu } :Props) => {
       aboutSectionHeight = getElementYCoordinate(aboutSection);
     }
 
+    if (menuTitle) {
+      return MenuStateStatic;
+    }
     if (window.innerWidth < staticMenuSize) {
       return MenuStateStatic;
     }
@@ -199,7 +223,7 @@ const AppHomePageMenu = ({ isProjectMenu } :Props) => {
   const getIsSmallMenu = () => window.innerWidth < smallMenuSize;
 
   const [isSticky, setStickiness] = useState(false);
-  let menuState = MenuStateTop;
+  let menuState = menuTitle ? MenuStateStatic : MenuStateTop;
   const [titleProps, setTitleProps] = useState(getTitleProps(menuState, isProjectMenu));
   const [projProps, setProjProps] = useState(getProjProps(menuState));
   const [aboutProps, setAboutProps] = useState(getAboutProps(menuState));
@@ -226,15 +250,21 @@ const AppHomePageMenu = ({ isProjectMenu } :Props) => {
 
   const homeButtonText = smallMenu ? 'mp' : 'mike perrotta';
 
+  const titleObject = menuTitle ? (
+    <MenuItem props={titleCenter}>{menuTitle}</MenuItem>
+  ) : (
+    <></>
+  );
   return (
     <StickyWrapper ref={ref}>
-      <Menu isSticky={isSticky}>
+      <Menu isSticky={isSticky} alwaysShadow={alwaysShadow}>
         <MenuHashLink
             props={titleProps}
             smooth
             to={Routes.HOME}>
           {homeButtonText}
         </MenuHashLink>
+        {titleObject}
         <MenuHashLink
             props={projProps}
             scroll={scrollWithOffset}
@@ -252,6 +282,12 @@ const AppHomePageMenu = ({ isProjectMenu } :Props) => {
       </Menu>
     </StickyWrapper>
   );
+};
+
+AppHomePageMenu.defaultProps = {
+  isProjectMenu: false,
+  menuTitle: undefined,
+  alwaysShadow: false,
 };
 
 export default AppHomePageMenu;
