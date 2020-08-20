@@ -39,7 +39,7 @@ const InternalLink = styled(NavLink)`
 
 const AboutText = (
   <TextContainer>
-    <p>I am a scientist, writer, and developer.</p>
+    <p>I am a scientist, writer, and engineer.</p>
     <p>
       As a
       {' '}
@@ -57,7 +57,7 @@ const AboutText = (
     <p>
       As a
       {' '}
-      <span style={{ fontWeight: '500' }}>developer</span>
+      <span style={{ fontWeight: '500' }}>engineer</span>
       , I want to create products that
       people can use and tools that improve lives.
     </p>

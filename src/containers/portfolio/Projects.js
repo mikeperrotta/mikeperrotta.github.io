@@ -3,7 +3,7 @@
 import { css } from 'styled-components';
 
 import MeditationArticleImage from '../../assets/images/meditation-article/meditation-article-cover-image-with-text.png';
-import NeosensoryImage from '../../assets/images/neosensory/neosensory-image.png';
+import NeosensoryImage from '../../assets/images/neosensory/buzz.png';
 import EmpireAppImage from '../../assets/images/empire-app/empire-app-image.png';
 import { NEUTRALS } from '../../core/styles/Colors';
 
@@ -19,12 +19,12 @@ const PROJECTS :Object[] = [
     we create hardware devices that give people
     new senses. Check out some of the projects
     I’ve helped build.`,
-    external: true,
+    external: false,
     header: 'Neosensory',
     image: NeosensoryImage,
     imageHeight: 'calc(100% - 220px)',
     imageOnLeft: false,
-    link: Routes.NEOSENSORY_EXTERNAL,
+    link: Routes.NEOSENSORY,
     name: 'Neosensory',
   },
   {
@@ -44,15 +44,15 @@ const PROJECTS :Object[] = [
   },
   {
     bgColor: NEUTRALS.OFF_WHITE_BACKGROUND,
-    buttonText: 'Read my article',
-    description: `As a meditator and a neuroscientist,
-    I’m curious about how clearing your
-    mind changes your brain. `,
+    buttonText: 'Read my articles',
+    description: `I enjoy writing on a variety of topics,
+    especially related to neuroscience.
+    Find some of my articles on Medium. `,
     external: true,
-    header: 'Shaping Your Meditation Through Brain Science',
+    header: 'Writing',
     image: MeditationArticleImage,
     imageOnLeft: false,
-    link: Routes.MEDITATION_ARTICLE,
+    link: Routes.MEDIUM_PROFILE,
     name: 'Meditation Article',
     shadow,
   },

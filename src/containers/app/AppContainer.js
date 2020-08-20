@@ -9,6 +9,7 @@ import ReactGA from 'react-ga';
 import ActivityTracker from '../../apps/activity_tracker/ActivityTracker';
 import AppHomePage from './AppHomePage';
 import EmpireApp from '../projects/empire_app/EmpireApp';
+import Neosensory from '../projects/neosensory/Neosensory';
 import ErrorPage from './Error';
 import Resume from '../resume/Resume';
 import * as Routes from '../../core/router/Routes';
@@ -24,6 +25,7 @@ const AppContainer = ({ location } :propTypes) => {
   return (
     <Switch>
       <Route path={Routes.EMPIRE_APP} component={EmpireApp} />
+      <Route path={Routes.NEOSENSORY} component={Neosensory} />
       <Route path={Routes.RESUME} component={Resume} />
       <Route path={Routes.ACTIVITY_TRACKER} component={ActivityTracker} />
       <Route exact strict path={Routes.ROOT} component={AppHomePage} />
