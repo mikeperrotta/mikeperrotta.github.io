@@ -56,7 +56,7 @@ const SmallText = styled.div`
 
 const ErrorPage = () => (
   <>
-    <AppHomePageMenu projectMenu />
+    <AppHomePageMenu isProjectMenu />
     <Content>
       <HeaderText>404!</HeaderText>
       <ImageContainer>
