@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.js": "/static/js/main.da41d8c5.chunk.js",
-    "main.js.map": "/static/js/main.da41d8c5.chunk.js.map",
+    "main.js": "/static/js/main.0f66573b.chunk.js",
+    "main.js.map": "/static/js/main.0f66573b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f796f574.js",
     "runtime-main.js.map": "/static/js/runtime-main.f796f574.js.map",
-    "static/js/2.add6ee0d.chunk.js": "/static/js/2.add6ee0d.chunk.js",
-    "static/js/2.add6ee0d.chunk.js.map": "/static/js/2.add6ee0d.chunk.js.map",
+    "static/js/2.c23ccbd7.chunk.js": "/static/js/2.c23ccbd7.chunk.js",
+    "static/js/2.c23ccbd7.chunk.js.map": "/static/js/2.c23ccbd7.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.c769abe879c9dd6724c6359e70c349da.js": "/precache-manifest.c769abe879c9dd6724c6359e70c349da.js",
+    "precache-manifest.ac9fee468773c861f105fb89137ff462.js": "/precache-manifest.ac9fee468773c861f105fb89137ff462.js",
     "service-worker.js": "/service-worker.js",
     "static/media/amplitude.png": "/static/media/amplitude.96496e4a.png",
     "static/media/article-image.png": "/static/media/article-image.1804dbfb.png",
+    "static/media/buzz.png": "/static/media/buzz.9200c039.png",
     "static/media/empire-app-image.png": "/static/media/empire-app-image.a8dcd2ea.png",
     "static/media/empire_app_header2x.png": "/static/media/empire_app_header2x.55faed60.png",
     "static/media/expo-demo.gif": "/static/media/expo-demo.07570f17.gif",
@@ -18,14 +19,18 @@
     "static/media/logo.png": "/static/media/logo.1a5d0b2e.png",
     "static/media/many-mikes.jpg": "/static/media/many-mikes.435cb786.jpg",
     "static/media/meditation-article-cover-image-with-text.png": "/static/media/meditation-article-cover-image-with-text.056dd4a4.png",
-    "static/media/neosensory-image.png": "/static/media/neosensory-image.9200c039.png",
+    "static/media/neo-logo-space.png": "/static/media/neo-logo-space.982c5bf8.png",
+    "static/media/prototyping.jpg": "/static/media/prototyping.4c7640f3.jpg",
     "static/media/resume.pdf": "/static/media/resume.942c168f.pdf",
+    "static/media/tmcx-team.png": "/static/media/tmcx-team.e08a103e.png",
+    "static/media/vest.gif": "/static/media/vest.52d77a99.gif",
+    "static/media/westworld.png": "/static/media/westworld.3ad38d9f.png",
     "static/media/white-keyboard.jpg": "/static/media/white-keyboard.0c1b1e20.jpg",
     "static/media/xd-demo.png": "/static/media/xd-demo.b63166bd.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f796f574.js",
-    "static/js/2.add6ee0d.chunk.js",
-    "static/js/main.da41d8c5.chunk.js"
+    "static/js/2.c23ccbd7.chunk.js",
+    "static/js/main.0f66573b.chunk.js"
   ]
 }
