@@ -55,7 +55,7 @@ const AboutText = (
       knowledge and stories with people.
     </p>
     <p>
-      As a
+      As an
       {' '}
       <span style={{ fontWeight: '500' }}>engineer</span>
       , I want to create products that
