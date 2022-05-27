@@ -15,7 +15,7 @@ const PROJECTS :Object[] = [
   {
     bgColor: NEUTRALS.OFF_WHITE_BACKGROUND,
     buttonText: 'Check it out',
-    description: `I’m a scientist at Neosensory, where
+    description: `I’m Chief Science Officer at Neosensory, where
     we create hardware devices that give people
     new senses. Check out some of the projects
     I’ve helped build.`,
